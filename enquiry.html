@@ -1,217 +1,262 @@
 <!DOCTYPE html>
+<!--
+    Water For All - Enquiry Page (enquiry.html)
+    Form for product/service enquiries, volunteering,
+    sponsorship, and general questions.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with Water For All. Enquire about services, volunteering, sponsorships, or partnerships.">
     <title>Enquiry | Water For All</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- ==================== HEADER ==================== -->
-<header>
-    <a href="index.html">
-        <h1>Water For All</h1>
-    </a>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About Us</a> |
-        <a href="services.html">Services</a> |
-        <a href="enquiry.html">Enquiry</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
-    <hr>
-</header>
-
-<!-- ==================== MAIN CONTENT ==================== -->
-<main>
-
-    <!-- Page Title -->
-    <section>
-        <h1>Make an Enquiry</h1>
-        <p>Interested in our services, volunteering, or partnering with us? We would love to hear from you.</p>
-    </section>
-
-    <hr>
-
-    <!-- Enquiry Content -->
-    <section>
-        <table width="100%">
-            <tr>
-                <!-- Left Column: Introduction -->
-                <td width="45%" valign="top">
-                    <h2>How Can We Help You?</h2>
-                    <p>Whether you are a community leader seeking water solutions, a business looking to partner with us, or an individual wanting to volunteer, please fill out the form and we will get back to you within 48 hours.</p>
-
-                    <h3>Enquiry Options</h3>
-                    <table border="1" cellpadding="10" width="100%">
-                        <tr>
-                            <td>
-                                <h4>Service Enquiry</h4>
-                                <p>Request water purification systems, educational programmes, or community outreach for your area.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Volunteer</h4>
-                                <p>Join our network of over 1,200 volunteers helping communities access clean water.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Sponsorship</h4>
-                                <p>Partner with us as a corporate sponsor to fund water projects and make a lasting impact.</p>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <h3>Frequently Asked Questions</h3>
-                    <dl>
-                        <dt><strong>How long does installation take?</strong></dt>
-                        <dd>Depending on community size, installation typically takes 2-4 weeks from approval.</dd>
-                        <br>
-                        <dt><strong>Do you charge communities?</strong></dt>
-                        <dd>Our core services are provided free of charge. We are funded through donations, sponsorships, and grants.</dd>
-                        <br>
-                        <dt><strong>What qualifications do volunteers need?</strong></dt>
-                        <dd>No specific qualifications are required. We welcome volunteers from all backgrounds and provide training.</dd>
-                        <br>
-                        <dt><strong>How can my company become a sponsor?</strong></dt>
-                        <dd>Select "Sponsorship" in the form and our partnerships team will reach out to discuss opportunities.</dd>
-                    </dl>
-                </td>
-                <td width="10%"></td>
-                <!-- Right Column: Form -->
-                <td width="45%" valign="top">
-                    <h2>Enquiry Form</h2>
-                    <form action="#" method="POST">
-                        <fieldset>
-                            <legend>Enquiry Type</legend>
-                            <p>
-                                <label>
-                                    <input type="radio" name="enquiryType" value="service" checked> Service Enquiry
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input type="radio" name="enquiryType" value="volunteer"> Volunteer
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input type="radio" name="enquiryType" value="sponsorship"> Sponsorship
-                                </label>
-                            </p>
-                        </fieldset>
-
-                        <p>
-                            <label for="fullName">Full Name *</label><br>
-                            <input type="text" id="fullName" name="fullName" required size="50" placeholder="Enter your full name">
-                        </p>
-
-                        <p>
-                            <label for="email">Email Address *</label><br>
-                            <input type="email" id="email" name="email" required size="50" placeholder="your.email@example.com">
-                        </p>
-
-                        <p>
-                            <label for="phone">Phone Number *</label><br>
-                            <input type="tel" id="phone" name="phone" required size="50" placeholder="+27 XX XXX XXXX">
-                        </p>
-
-                        <p>
-                            <label for="organisation">Organisation (if applicable)</label><br>
-                            <input type="text" id="organisation" name="organisation" size="50" placeholder="Company, school, or community name">
-                        </p>
-
-                        <p>
-                            <label for="province">Province *</label><br>
-                            <select id="province" name="province" required>
-                                <option value="" disabled selected>Select your province</option>
-                                <option value="eastern-cape">Eastern Cape</option>
-                                <option value="free-state">Free State</option>
-                                <option value="gauteng">Gauteng</option>
-                                <option value="kwazulu-natal">KwaZulu-Natal</option>
-                                <option value="limpopo">Limpopo</option>
-                                <option value="mpumalanga">Mpumalanga</option>
-                                <option value="north-west">North West</option>
-                                <option value="northern-cape">Northern Cape</option>
-                                <option value="western-cape">Western Cape</option>
-                            </select>
-                        </p>
-
-                        <p>
-                            <label for="message">Your Message *</label><br>
-                            <textarea id="message" name="message" required rows="6" cols="50" placeholder="Tell us about your enquiry, community needs, or how you would like to get involved..."></textarea>
-                        </p>
-
-                        <p>
-                            <button type="submit">Submit Enquiry</button>
-                        </p>
-                    </form>
-                </td>
-            </tr>
-        </table>
-    </section>
-
-    <hr>
-
-    <!-- Direct Contact CTA -->
-    <section>
-        <h2>Prefer to Call?</h2>
-        <p>You can also reach us directly during office hours, Monday to Friday, 8am to 5pm.</p>
-        <p><a href="contact.html">View Contact Details</a></p>
-    </section>
-
-</main>
-
-<hr>
-
-<!-- ==================== FOOTER ==================== -->
-<footer>
-    <table width="100%">
-        <tr>
-            <td valign="top" width="25%">
-                <h4>Water For All</h4>
-                <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
-                <p>
-                    <a href="#">Facebook</a> |
-                    <a href="#">Twitter</a> |
-                    <a href="#">Instagram</a> |
-                    <a href="#">LinkedIn</a>
-                </p>
-            </td>
-            <td valign="top" width="20%">
-                <h4>Quick Links</h4>
-                <ul>
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">&#128167;</span>
+                    <span class="logo-text">Water <span>For All</span></span>
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="enquiry.html" class="active">Enquiry</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </td>
-            <td valign="top" width="20%">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="services.html">Water Purification</a></li>
-                    <li><a href="services.html">Conservation Education</a></li>
-                    <li><a href="services.html">Community Outreach</a></li>
-                    <li><a href="services.html">Emergency Response</a></li>
-                </ul>
-            </td>
-            <td valign="top" width="35%">
-                <h4>Contact Us</h4>
-                <ul>
-                    <li>42 Water Street, Cape Town, 8001</li>
-                    <li>+27 21 555 0140</li>
-                    <li><a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a></li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <p align="center">&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
-</footer>
+            </nav>
+        </div>
+    </header>
 
+    <main id="main-content">
+
+        <!-- ==================== ENQUIRY HERO ==================== -->
+        <section class="about-hero" aria-label="Enquiry introduction">
+            <div class="container">
+                <h1>Make an Enquiry</h1>
+                <p>Interested in our services, volunteering, or partnering with us? We would love to hear from you.</p>
+            </div>
+        </section>
+
+        <!-- ==================== ENQUIRY CONTENT ==================== -->
+        <section class="section section-light" aria-label="Enquiry form">
+            <div class="container">
+                <div class="enquiry-layout">
+                    <!-- Left column: Introduction and enquiry types -->
+                    <div class="enquiry-intro">
+                        <h2>How Can We Help You?</h2>
+                        <p>Whether you are a community leader seeking water solutions, a business looking to partner with us, or an individual wanting to volunteer, please fill out the form and we will get back to you within 48 hours.</p>
+
+                        <!-- Enquiry type descriptions -->
+                        <div class="enquiry-types">
+                            <div class="enquiry-type">
+                                <span class="enquiry-type-icon">&#128167;</span>
+                                <div>
+                                    <h4>Service Enquiry</h4>
+                                    <p>Request water purification systems, educational programmes, or community outreach for your area.</p>
+                                </div>
+                            </div>
+                            <div class="enquiry-type">
+                                <span class="enquiry-type-icon">&#129309;</span>
+                                <div>
+                                    <h4>Volunteer</h4>
+                                    <p>Join our network of over 1,200 volunteers helping communities access clean water.</p>
+                                </div>
+                            </div>
+                            <div class="enquiry-type">
+                                <span class="enquiry-type-icon">&#128176;</span>
+                                <div>
+                                    <h4>Sponsorship</h4>
+                                    <p>Partner with us as a corporate sponsor to fund water projects and make a lasting impact.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right column: Enquiry form -->
+                    <div>
+                        <form id="enquiryForm" class="contact-form" action="#" method="POST" novalidate>
+                            <!-- Success message (hidden by default) -->
+                            <div class="form-success" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid #c3e6cb;">
+                                <strong>Thank you!</strong> Your enquiry has been submitted successfully. We will respond within 48 hours.
+                            </div>
+
+                            <!-- Enquiry type selection -->
+                            <div class="form-group">
+                                <label>Enquiry Type *</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="enquiryType" value="service" required checked>
+                                        Service Enquiry
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="enquiryType" value="volunteer" required>
+                                        Volunteer
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="enquiryType" value="sponsorship" required>
+                                        Sponsorship
+                                    </label>
+                                </div>
+                                <span class="form-error">Please select an enquiry type.</span>
+                            </div>
+
+                            <!-- Full name -->
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="Enter your full name">
+                                <span class="form-error">Please enter your full name.</span>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                                <span class="form-error">Please enter a valid email address.</span>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+27 XX XXX XXXX">
+                                <span class="form-error">Please enter a valid phone number.</span>
+                            </div>
+
+                            <!-- Organisation (optional) -->
+                            <div class="form-group">
+                                <label for="organisation">Organisation (if applicable)</label>
+                                <input type="text" id="organisation" name="organisation" placeholder="Company, school, or community name">
+                            </div>
+
+                            <!-- Province dropdown -->
+                            <div class="form-group">
+                                <label for="province">Province *</label>
+                                <select id="province" name="province" required>
+                                    <option value="" disabled selected>Select your province</option>
+                                    <option value="eastern-cape">Eastern Cape</option>
+                                    <option value="free-state">Free State</option>
+                                    <option value="gauteng">Gauteng</option>
+                                    <option value="kwazulu-natal">KwaZulu-Natal</option>
+                                    <option value="limpopo">Limpopo</option>
+                                    <option value="mpumalanga">Mpumalanga</option>
+                                    <option value="north-west">North West</option>
+                                    <option value="northern-cape">Northern Cape</option>
+                                    <option value="western-cape">Western Cape</option>
+                                </select>
+                                <span class="form-error">Please select a province.</span>
+                            </div>
+
+                            <!-- Message textarea -->
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" required minlength="10" placeholder="Tell us about your enquiry, community needs, or how you would like to get involved..."></textarea>
+                                <span class="form-error">Please enter a message (at least 10 characters).</span>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Enquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FAQ SECTION ==================== -->
+        <section class="section" aria-label="Frequently asked questions">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about getting involved with Water For All.</p>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
+                        <h4 style="margin-bottom: 0.5rem;">How long does it take to install a water purification system?</h4>
+                        <p style="margin-bottom: 0; color: #555;">Depending on the community size and system type, installation typically takes 2-4 weeks from approval, including site assessment, community consultation, and equipment setup.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
+                        <h4 style="margin-bottom: 0.5rem;">Do you charge communities for your services?</h4>
+                        <p style="margin-bottom: 0; color: #555;">Our core services are provided free of charge to underserved communities. We are funded through donations, corporate sponsorships, and government grants.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
+                        <h4 style="margin-bottom: 0.5rem;">What qualifications do I need to volunteer?</h4>
+                        <p style="margin-bottom: 0; color: #555;">No specific qualifications are required. We welcome volunteers from all backgrounds and provide comprehensive training for all roles.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
+                        <h4 style="margin-bottom: 0.5rem;">How can my company become a sponsor?</h4>
+                        <p style="margin-bottom: 0; color: #555;">Contact us through this form selecting "Sponsorship" and our partnerships team will reach out to discuss tailored sponsorship opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CTA ==================== -->
+        <section class="cta-section" aria-label="Direct contact">
+            <div class="container">
+                <h2>Prefer to Call?</h2>
+                <p>You can also reach us directly during office hours, Monday to Friday, 8am to 5pm.</p>
+                <a href="contact.html" class="btn btn-primary" style="background: #fff; color: #0077B6;">View Contact Details</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">Water <span>For All</span></span>
+                    <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">X</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">&#128247;</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="enquiry.html">Enquiry</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Water Purification</a></li>
+                        <li><a href="services.html">Conservation Education</a></li>
+                        <li><a href="services.html">Community Outreach</a></li>
+                        <li><a href="services.html">Emergency Response</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>&#128205; 42 Water Street, Cape Town, 8001</li>
+                        <li>&#128222; +27 21 555 0140</li>
+                        <li>&#128231; info@waterforall.org.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

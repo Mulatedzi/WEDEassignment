@@ -1,188 +1,214 @@
 <!DOCTYPE html>
+<!--
+    Water For All - About Us Page (about.html)
+    Displays the organisation's history, mission, vision,
+    values, and team members.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn about Water For All's mission, vision, history, and the team behind our clean water initiatives.">
     <title>About Us | Water For All</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- ==================== HEADER ==================== -->
-<header>
-    <a href="index.html">
-        <h1>Water For All</h1>
-    </a>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About Us</a> |
-        <a href="services.html">Services</a> |
-        <a href="enquiry.html">Enquiry</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
-    <hr>
-</header>
-
-<!-- ==================== MAIN CONTENT ==================== -->
-<main>
-
-    <!-- Page Title -->
-    <section>
-        <h1>About Water For All</h1>
-        <p>A non-profit organisation committed to ensuring every South African has access to clean, safe drinking water.</p>
-    </section>
-
-    <hr>
-
-    <!-- History & Mission -->
-    <section>
-        <h2>Our Story</h2>
-        <table width="100%">
-            <tr>
-                <td width="50%" valign="top">
-                    <img src="images/about-water.jpg" alt="Clean water being poured into a glass from a filtration system" width="100%">
-                </td>
-                <td width="50%" valign="top">
-                    <p>Water For All was founded in 2019 by a group of environmental engineers and community activists who witnessed first-hand the devastating effects of water scarcity in rural South African communities. What began as a small pilot project in the Eastern Cape has grown into a nationwide initiative.</p>
-                    <p>Over the past six years, we have installed over 320 water purification stations, trained more than 500 community water stewards, and brought clean water access to over 75,000 people who previously relied on unsafe water sources.</p>
-                    <p>Our approach combines cutting-edge water purification technology with deep community engagement, ensuring that every installation is maintained and cherished by the people it serves.</p>
-                </td>
-            </tr>
-        </table>
-    </section>
-
-    <hr>
-
-    <!-- Mission & Vision -->
-    <section>
-        <table width="100%">
-            <tr>
-                <td width="50%" valign="top">
-                    <h2>Our Mission</h2>
-                    <p>To provide sustainable access to clean, safe drinking water for underserved communities across South Africa through innovative technology, education, and community-driven partnerships that create lasting change.</p>
-                    <h2>Our Vision</h2>
-                    <p>A South Africa where every person, regardless of geography or economic status, has reliable access to clean drinking water by 2035 -- creating healthier communities, stronger local economies, and a more equitable society.</p>
-                </td>
-                <td width="50%" valign="top">
-                    <h2>Our Core Values</h2>
-                    <ul>
-                        <li><strong>Community First</strong> -- We listen to communities and involve them in every decision.</li>
-                        <li><strong>Sustainability</strong> -- Every solution must be environmentally and financially sustainable.</li>
-                        <li><strong>Innovation</strong> -- We embrace new technologies to deliver better results efficiently.</li>
-                        <li><strong>Transparency</strong> -- We operate with full accountability to our donors and communities.</li>
-                        <li><strong>Collaboration</strong> -- We partner with government, businesses, and other NGOs for greater impact.</li>
-                        <li><strong>Dignity</strong> -- We believe access to clean water is a human right, not a privilege.</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </section>
-
-    <hr>
-
-    <!-- Team Section -->
-    <section>
-        <h2>Meet Our Team</h2>
-        <p>Dedicated professionals working tirelessly to bring clean water to every community.</p>
-        <p><img src="images/team.jpg" alt="Water For All team members standing in front of water purification equipment" width="100%"></p>
-        <table border="1" cellpadding="15" width="100%">
-            <tr>
-                <td align="center">
-                    <h4>Thabo Sithole</h4>
-                    <p>Founder &amp; Executive Director</p>
-                </td>
-                <td align="center">
-                    <h4>Dr. Lerato Ndlovu</h4>
-                    <p>Head of Operations</p>
-                </td>
-                <td align="center">
-                    <h4>James Mbeki</h4>
-                    <p>Chief Technology Officer</p>
-                </td>
-                <td align="center">
-                    <h4>Sipho Khumalo</h4>
-                    <p>Community Outreach Manager</p>
-                </td>
-            </tr>
-            <tr>
-                <td align="center">
-                    <h4>Amina Moussa</h4>
-                    <p>Head of Education Programmes</p>
-                </td>
-                <td align="center">
-                    <h4>Daniel Vermeulen</h4>
-                    <p>Fundraising &amp; Partnerships Director</p>
-                </td>
-                <td align="center">
-                    <h4>Nomsa Peters</h4>
-                    <p>Volunteer Coordinator</p>
-                </td>
-                <td align="center">
-                    <h4>Dr. Olivia Khoza</h4>
-                    <p>Water Quality Specialist</p>
-                </td>
-            </tr>
-        </table>
-    </section>
-
-    <hr>
-
-    <!-- Call-to-Action -->
-    <section>
-        <h2>Want to Join Our Mission?</h2>
-        <p>We are always looking for passionate individuals and organisations to partner with us.</p>
-        <p><a href="enquiry.html">Get Involved</a></p>
-    </section>
-
-</main>
-
-<hr>
-
-<!-- ==================== FOOTER ==================== -->
-<footer>
-    <table width="100%">
-        <tr>
-            <td valign="top" width="25%">
-                <h4>Water For All</h4>
-                <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
-                <p>
-                    <a href="#">Facebook</a> |
-                    <a href="#">Twitter</a> |
-                    <a href="#">Instagram</a> |
-                    <a href="#">LinkedIn</a>
-                </p>
-            </td>
-            <td valign="top" width="20%">
-                <h4>Quick Links</h4>
-                <ul>
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">&#128167;</span>
+                    <span class="logo-text">Water <span>For All</span></span>
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="enquiry.html">Enquiry</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </td>
-            <td valign="top" width="20%">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="services.html">Water Purification</a></li>
-                    <li><a href="services.html">Conservation Education</a></li>
-                    <li><a href="services.html">Community Outreach</a></li>
-                    <li><a href="services.html">Emergency Response</a></li>
-                </ul>
-            </td>
-            <td valign="top" width="35%">
-                <h4>Contact Us</h4>
-                <ul>
-                    <li>42 Water Street, Cape Town, 8001</li>
-                    <li>+27 21 555 0140</li>
-                    <li><a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a></li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <p align="center">&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
-</footer>
+            </nav>
+        </div>
+    </header>
 
+    <main id="main-content">
+
+        <!-- ==================== ABOUT HERO ==================== -->
+        <section class="about-hero" aria-label="About us introduction">
+            <div class="container">
+                <h1>About Water For All</h1>
+                <p>A non-profit organisation committed to ensuring every South African has access to clean, safe drinking water.</p>
+            </div>
+        </section>
+
+        <!-- ==================== HISTORY & MISSION ==================== -->
+        <section class="section" aria-label="Our history and mission">
+            <div class="container">
+                <div class="about-content">
+                    <!-- Left: Image -->
+                    <div class="about-image">
+                        <img src="images/about-water.jpg" alt="Clean water being poured into a glass from a filtration system">
+                    </div>
+                    <!-- Right: Text content -->
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>Water For All was founded in 2019 by a group of environmental engineers and community activists who witnessed first-hand the devastating effects of water scarcity in rural South African communities. What began as a small pilot project in the Eastern Cape has grown into a nationwide initiative.</p>
+                        <p>Over the past six years, we have installed over 320 water purification stations, trained more than 500 community water stewards, and brought clean water access to over 75,000 people who previously relied on unsafe water sources.</p>
+                        <p>Our approach combines cutting-edge water purification technology with deep community engagement, ensuring that every installation is maintained and cherished by the people it serves.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MISSION & VISION ==================== -->
+        <section class="section section-light" aria-label="Mission and vision">
+            <div class="container">
+                <div class="about-content">
+                    <!-- Left: Mission -->
+                    <div class="about-text">
+                        <h2>Our Mission</h2>
+                        <p>To provide sustainable access to clean, safe drinking water for underserved communities across South Africa through innovative technology, education, and community-driven partnerships that create lasting change.</p>
+                        <h3>Our Vision</h3>
+                        <p>A South Africa where every person, regardless of geography or economic status, has reliable access to clean drinking water by 2035 — creating healthier communities, stronger local economies, and a more equitable society.</p>
+                    </div>
+                    <!-- Right: Values list -->
+                    <div class="about-text">
+                        <h2>Our Core Values</h2>
+                        <ul class="values-list">
+                            <li><strong>Community First</strong> — We listen to communities and involve them in every decision.</li>
+                            <li><strong>Sustainability</strong> — Every solution must be environmentally and financially sustainable.</li>
+                            <li><strong>Innovation</strong> — We embrace new technologies to deliver better results efficiently.</li>
+                            <li><strong>Transparency</strong> — We operate with full accountability to our donors and communities.</li>
+                            <li><strong>Collaboration</strong> — We partner with government, businesses, and other NGOs for greater impact.</li>
+                            <li><strong>Dignity</strong> — We believe access to clean water is a human right, not a privilege.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TEAM SECTION ==================== -->
+        <section class="section" aria-label="Our team">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet Our Team</h2>
+                    <p>Dedicated professionals working tirelessly to bring clean water to every community.</p>
+                </div>
+                <!-- Team photo -->
+                <div class="mb-2">
+                    <img src="images/team.jpg" alt="Water For All team members standing in front of water purification equipment" style="border-radius: 12px; width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <!-- Team members grid -->
+                <div class="team-grid">
+                    <article class="team-card">
+                        <div class="team-avatar">TS</div>
+                        <h4>Thabo Sithole</h4>
+                        <p>Founder &amp; Executive Director</p>
+                    </article>
+                    <article class="team-card">
+                        <div class="team-avatar">LN</div>
+                        <h4>Dr. Lerato Ndlovu</h4>
+                        <p>Head of Operations</p>
+                    </article>
+                    <article class="team-card">
+                        <div class="team-avatar">JM</div>
+                        <h4>James Mbeki</h4>
+                        <p>Chief Technology Officer</p>
+                    </article>
+                    <article class="team-card">
+                        <div class="team-avatar">SK</div>
+                        <h4>Sipho Khumalo</h4>
+                        <p>Community Outreach Manager</p>
+                    </article>
+                    <article class="team-card">
+                        <div class="team-avatar">AM</div>
+                        <h4>Amina Moussa</h4>
+                        <p>Head of Education Programmes</p>
+                    </article>
+                    <article class="team-card">
+                        <div class="team-avatar">DV</div>
+                        <h4>Daniel Vermeulen</h4>
+                        <p>Fundraising &amp; Partnerships Director</p>
+                    </article>
+                    <article class="team-card">
+                        <div class="team-avatar">NP</div>
+                        <h4>Nomsa Peters</h4>
+                        <p>Volunteer Coordinator</p>
+                    </article>
+                    <article class="team-card">
+                        <div class="team-avatar">OK</div>
+                        <h4>Dr. Olivia Khoza</h4>
+                        <p>Water Quality Specialist</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CTA ==================== -->
+        <section class="cta-section" aria-label="Join our mission">
+            <div class="container">
+                <h2>Want to Join Our Mission?</h2>
+                <p>We are always looking for passionate individuals and organisations to partner with us.</p>
+                <a href="enquiry.html" class="btn btn-primary" style="background: #fff; color: #0077B6;">Get Involved</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">Water <span>For All</span></span>
+                    <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">X</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">&#128247;</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="enquiry.html">Enquiry</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Water Purification</a></li>
+                        <li><a href="services.html">Conservation Education</a></li>
+                        <li><a href="services.html">Community Outreach</a></li>
+                        <li><a href="services.html">Emergency Response</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>&#128205; 42 Water Street, Cape Town, 8001</li>
+                        <li>&#128222; +27 21 555 0140</li>
+                        <li>&#128231; info@waterforall.org.za</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
