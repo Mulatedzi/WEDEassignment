@@ -206,20 +206,20 @@ water-for-all-part3/
 
 | Date | Change | Page(s) | Reason |
 |------|--------|---------|--------|
-| 2025-04-15 | Added fictitious organisation banner (orange) | All pages | Assignment requirement: organisation must be clearly marked as fictitious |
-| 2025-04-15 | Updated footer with fictitious disclaimer | All pages | Assignment requirement: clear fictional disclaimer |
-| 2025-04-15 | Added JavaScript form validation | enquiry.html, contact.html | Part 3 requirement: client-side form validation |
-| 2025-04-15 | Added success/error message display | enquiry.html, contact.html | Improved user feedback for form submissions |
-| 2025-04-15 | Added CSS accordion FAQ | enquiry.html | Part 3 requirement: interactive elements |
-| 2025-04-15 | Added scroll-to-top button (JavaScript) | All pages | Enhanced user experience |
-| 2025-04-15 | Added CSS animations (fadeInUp) | index.html | Part 3 requirement: animations and transitions |
-| 2025-04-15 | Added card hover effects | All pages | Enhanced visual interactivity |
-| 2025-04-15 | Added comprehensive SEO meta tags | All pages | Part 3 requirement: on-page SEO |
-| 2025-04-15 | Created sitemap.xml | Root | Part 3 requirement: sitemap for SEO |
-| 2025-04-15 | Created robots.txt | Root | Part 3 requirement: robots directives |
-| 2025-04-15 | Improved mobile navigation | All pages | Better responsive experience |
-| 2025-04-15 | Added Open Graph meta tags | index.html | Part 3 requirement: social media SEO |
-| 2025-04-15 | Enhanced form styling with error states | enquiry.html, contact.html | Better visual feedback for validation |
+| 2026-04-13 | Added fictitious organisation banner (orange) | All pages | Assignment requirement: organisation must be clearly marked as fictitious |
+| 2026-04-13 | Updated footer with fictitious disclaimer | All pages | Assignment requirement: clear fictional disclaimer |
+| 2026-04-15 | Added JavaScript form validation | enquiry.html, contact.html | Part 3 requirement: client-side form validation |
+| 2026-04-15 | Added success/error message display | enquiry.html, contact.html | Improved user feedback for form submissions |
+| 2026-04-15 | Added CSS accordion FAQ | enquiry.html | Part 3 requirement: interactive elements |
+| 2026-04-15 | Added scroll-to-top button (JavaScript) | All pages | Enhanced user experience |
+| 2026-04-15 | Added CSS animations (fadeInUp) | index.html | Part 3 requirement: animations and transitions |
+| 2026-04-15 | Added card hover effects | All pages | Enhanced visual interactivity |
+| 2026-04-15 | Added comprehensive SEO meta tags | All pages | Part 3 requirement: on-page SEO |
+| 2026-04-16 | Created sitemap.xml | Root | Part 3 requirement: sitemap for SEO |
+| 2026-04-16 | Created robots.txt | Root | Part 3 requirement: robots directives |
+| 2026-04-16 | Improved mobile navigation | All pages | Better responsive experience |
+| 2026-04-17 | Added Open Graph meta tags | index.html | Part 3 requirement: social media SEO |
+| 2026-04-17 | Enhanced form styling with error states | enquiry.html, contact.html | Better visual feedback for validation |
 
 ### Part 2 (Previous Submission)
 
@@ -255,11 +255,9 @@ water-for-all-part3/
 
 ## GitHub Repository
 
-[Link to your GitHub repository here]
+(https://github.com/Mulatedzi/WEDEassignment.git)
 
 ## Deployed Website
-
-[Link to your deployed website (Netlify/GitHub Pages) here]
 
 ---
 
