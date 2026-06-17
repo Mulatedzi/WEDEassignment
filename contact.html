@@ -1,273 +1,234 @@
 <!DOCTYPE html>
-<!--
-    Water For All - Contact Page (contact.html)
-    Displays contact information for multiple office locations,
-    an embedded map, and a contact form.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Water For All. Find our office locations in Cape Town, Durban, and Polokwane, or send us a message.">
-    <title>Contact Us | Water For All</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Contact Us | Water For All - Cape Town, Durban, Polokwane</title>
+    <meta name="description" content="Contact Water For All at our offices in Cape Town, Durban, or Polokwane. Send us a message, call our hotline, or find us on social media.">
+    <meta name="keywords" content="contact Water For All, Cape Town office, Durban office, Polokwane office, water charity contact">
+    <link rel="canonical" href="https://waterforall.org.za/contact.html">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:16px;line-height:1.6;color:#1A1A2E}
+        a{color:#0077B6;text-decoration:none;transition:color .3s}a:hover{color:#00B4D8;text-decoration:underline}
+        .fictitious-banner{background:#FF6B35;color:#fff;text-align:center;padding:.5rem;font-size:.85rem;font-weight:600}
+        header{background:#023E8A;color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+        header h1{font-size:1.5rem}header h1 a{color:#fff}header h1 a:hover{text-decoration:none}
+        nav ul{display:flex;list-style:none;gap:2rem}nav a{color:#fff;font-weight:500;padding:.5rem 0;position:relative}
+        nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#90E0EF;transition:width .3s}nav a:hover::after{width:100%}nav a:hover{color:#90E0EF;text-decoration:none}nav a.active::after{width:100%}
+        #menu-checkbox{display:none}.menu-icon{display:none;cursor:pointer;font-size:1.5rem;color:#fff}
+        .page-hero{background:linear-gradient(135deg,#023E8A,#0077B6,#00B4D8);color:#fff;padding:4rem 0;text-align:center}
+        .page-hero h2{font-size:2.5rem;color:#fff}.page-hero p{color:#CAF0F8;font-size:1.2rem;max-width:700px;margin:.5rem auto 0}
+        .container{width:90%;max-width:1200px;margin:0 auto;padding:4rem 0}
+        .section-title{text-align:center;margin-bottom:3rem}.section-title h2{font-size:2rem;color:#023E8A}
+        .two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+        .contact-info h3{color:#023E8A;margin:1.5rem 0 .75rem}.contact-info h3:first-child{margin-top:0}
+        .contact-table{width:100%;margin-bottom:1rem}.contact-table td{padding:.5rem 0}.contact-table td:first-child{font-weight:600;width:30%}
+        .emergency{color:#0077B6;font-size:1.2rem;font-weight:600}
+
+        /* Form */
+        .form-wrap{background:#F8FCFD;padding:2.5rem;border-radius:12px}
+        .form-group{margin-bottom:1.5rem}
+        .form-group label{display:block;margin-bottom:.5rem;font-weight:600;color:#023E8A}
+        .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border:2px solid #E0E0E0;border-radius:8px;font-size:1rem;font-family:inherit;transition:border-color .3s}
+        .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:#0077B6}
+        .form-group textarea{resize:vertical;min-height:120px}
+        .form-group.has-error input,.form-group.has-error textarea,.form-group.has-error select{border-color:#DC3545}
+        .error-message{color:#DC3545;font-size:.85rem;margin-top:.25rem;display:none}
+        .form-group.has-error .error-message{display:block}
+        .success-message{background:#d4edda;color:#155724;padding:1rem;border-radius:8px;margin-bottom:1.5rem;border:1px solid #c3e6cb;display:none}
+        .success-message.visible{display:block}
+
+        .locations{background:#F8FCFD;max-width:100%}.locations-inner{width:90%;max-width:1200px;margin:0 auto;padding:4rem 0}
+        .locations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .location-card{background:#fff;padding:2rem;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.08);text-align:center;transition:transform .3s}
+        .location-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.12)}
+        .location-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+        .location-card h3{color:#023E8A;margin-bottom:.5rem;font-size:1.2rem}
+        .location-card address{font-style:normal;color:#6C757D;font-size:.95rem}
+        .map{width:100%;height:350px;background:linear-gradient(135deg,#CAF0F8,#90E0EF);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-top:3rem;text-align:center}
+        .map-placeholder{color:#023E8A}.map-placeholder span{font-size:4rem;display:block;margin-bottom:1rem}
+
+        .social-section{text-align:center;padding:4rem 0}
+        .social-links{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem}
+        .social-links a{display:inline-block;padding:12px 24px;background:#0077B6;color:#fff;border-radius:50px;font-weight:500;transition:all .3s;text-decoration:none}
+        .social-links a:hover{background:#023E8A;color:#fff;transform:translateY(-2px);text-decoration:none}
+
+        .btn{display:inline-block;padding:14px 36px;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;border:none;text-decoration:none;transition:all .3s}
+        .btn:hover{text-decoration:none;transform:translateY(-2px)}
+        .btn-primary{background:#00B4D8;color:#fff;width:100%}.btn-primary:hover{background:#0077B6}
+        .btn-secondary{background:transparent;color:#fff;border:2px solid #fff}.btn-secondary:hover{background:#fff;color:#0077B6}
+
+        .cta{background:#0077B6;color:#fff;padding:4rem 0;text-align:center}.cta h2{color:#fff;font-size:2.5rem;margin-bottom:1rem}.cta>p{color:#CAF0F8;font-size:1.2rem;margin-bottom:2rem}
+        footer{background:#023E8A;color:#fff;padding:3rem 0 1rem}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;max-width:1200px;margin:0 auto;width:90%}
+        footer h3,footer h4{color:#90E0EF;margin-bottom:1rem}footer p,footer li{color:rgba(255,255,255,.8);font-size:.9rem}footer ul{list-style:none}footer li{margin-bottom:.5rem}footer a{color:rgba(255,255,255,.8)}footer a:hover{color:#90E0EF}
+        .footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:2rem;color:rgba(255,255,255,.6);font-size:.85rem}
+        .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#00B4D8;color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:all .3s;z-index:999}.scroll-top.visible{opacity:1;visibility:visible}.scroll-top:hover{background:#023E8A}
+        @media(max-width:768px){header{flex-wrap:wrap}.menu-icon{display:block}nav{display:none;width:100%}nav ul{flex-direction:column;gap:0;padding:1rem 0}#menu-checkbox:checked~nav{display:block}.two-col,.locations-grid,.footer-grid{grid-template-columns:1fr}.page-hero h2{font-size:2rem}}
+    </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="fictitious-banner">&#9888; Water For All is a <strong>fictitious organisation</strong> created for the WEDE5020 Web Development assignment.</div>
+<header>
+    <h1><a href="index.html">&#128167; Water For All</a></h1>
+    <label for="menu-checkbox" class="menu-icon">&#9776;</label>
+    <input type="checkbox" id="menu-checkbox">
+    <nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html" class="active">Contact</a></li></ul></nav>
+</header>
 
-    <!-- ==================== HEADER ==================== -->
-    <header class="site-header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-icon">&#128167;</span>
-                    <span class="logo-text">Water <span>For All</span></span>
-                </a>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-            <nav class="main-nav" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="enquiry.html">Enquiry</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
+<section class="page-hero">
+    <h2>Contact Us</h2>
+    <p>We have offices across South Africa. Reach out to us -- we would love to hear from you.</p>
+</section>
+
+<div class="container">
+    <div class="two-col">
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>Whether you have a question about our services, want to partner with us, or simply want to say hello, our team is ready to assist you.</p>
+            <table class="contact-table">
+                <tr><td>Email</td><td><a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a></td></tr>
+                <tr><td>Phone</td><td><a href="tel:+27215550140">+27 21 555 0140</a></td></tr>
+                <tr><td>Head Office</td><td>42 Water Street, Cape Town, 8001</td></tr>
+                <tr><td>Office Hours</td><td>Mon - Fri: 08:00 - 17:00<br>Sat: 09:00 - 13:00</td></tr>
+            </table>
+            <h3>Emergency Water Hotline</h3>
+            <p class="emergency">+27 82 555 0199 (24/7)</p>
+            <p style="font-size:.9rem;color:#6C757D">For urgent water-related emergencies only.</p>
         </div>
-    </header>
-
-    <main id="main-content">
-
-        <!-- ==================== CONTACT HERO ==================== -->
-        <section class="about-hero" aria-label="Contact introduction">
-            <div class="container">
-                <h1>Contact Us</h1>
-                <p>We have offices across South Africa. Reach out to us — we would love to hear from you.</p>
-            </div>
-        </section>
-
-        <!-- ==================== CONTACT INFORMATION & FORM ==================== -->
-        <section class="section" aria-label="Contact details and form">
-            <div class="container">
-                <div class="contact-grid">
-                    <!-- Left: Contact information -->
-                    <div class="contact-info">
-                        <h2>Get in Touch</h2>
-                        <p>Whether you have a question about our services, want to partner with us, or simply want to say hello, our team is ready to assist you.</p>
-
-                        <h3 style="margin-top: 2rem;">General Contact</h3>
-                        <ul class="contact-details">
-                            <li>
-                                <span class="contact-icon">&#128231;</span>
-                                <strong>Email</strong><br>
-                                <a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a>
-                            </li>
-                            <li>
-                                <span class="contact-icon">&#128222;</span>
-                                <strong>Phone</strong><br>
-                                <a href="tel:+27215550140">+27 21 555 0140</a>
-                            </li>
-                            <li>
-                                <span class="contact-icon">&#128205;</span>
-                                <strong>Head Office</strong><br>
-                                42 Water Street, Cape Town, 8001
-                            </li>
-                            <li>
-                                <span class="contact-icon">&#128338;</span>
-                                <strong>Office Hours</strong><br>
-                                Monday - Friday: 08:00 - 17:00<br>
-                                Saturday: 09:00 - 13:00
-                            </li>
-                        </ul>
-
-                        <h3 style="margin-top: 2rem;">Emergency Water Hotline</h3>
-                        <p style="color: #0077B6; font-size: 1.2rem; font-weight: 600;">&#128658; +27 82 555 0199 (24/7)</p>
-                        <p style="font-size: 0.9rem; color: #6C757D;">For urgent water-related emergencies only.</p>
-                    </div>
-
-                    <!-- Right: Contact form -->
-                    <div>
-                        <form id="contactForm" class="contact-form" action="#" method="POST" novalidate>
-                            <!-- Success message (hidden by default) -->
-                            <div class="form-success" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid #c3e6cb;">
-                                <strong>Thank you!</strong> Your message has been sent successfully. We will respond within 24 hours.
-                            </div>
-
-                            <!-- Name -->
-                            <div class="form-group">
-                                <label for="contactName">Full Name *</label>
-                                <input type="text" id="contactName" name="contactName" required minlength="2" placeholder="Enter your full name">
-                                <span class="form-error">Please enter your full name.</span>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="form-group">
-                                <label for="contactEmail">Email Address *</label>
-                                <input type="email" id="contactEmail" name="contactEmail" required placeholder="your.email@example.com">
-                                <span class="form-error">Please enter a valid email address.</span>
-                            </div>
-
-                            <!-- Subject -->
-                            <div class="form-group">
-                                <label for="subject">Subject *</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="" disabled selected>Select a subject</option>
-                                    <option value="general">General Enquiry</option>
-                                    <option value="services">Services Information</option>
-                                    <option value="partnership">Partnership Opportunity</option>
-                                    <option value="donation">Donation Query</option>
-                                    <option value="media">Media &amp; Press</option>
-                                    <option value="complaint">Complaint or Feedback</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <span class="form-error">Please select a subject.</span>
-                            </div>
-
-                            <!-- Phone (optional) -->
-                            <div class="form-group">
-                                <label for="contactPhone">Phone Number (optional)</label>
-                                <input type="tel" id="contactPhone" name="contactPhone" placeholder="+27 XX XXX XXXX">
-                            </div>
-
-                            <!-- Message -->
-                            <div class="form-group">
-                                <label for="contactMessage">Your Message *</label>
-                                <textarea id="contactMessage" name="contactMessage" required minlength="10" placeholder="How can we help you?"></textarea>
-                                <span class="form-error">Please enter a message (at least 10 characters).</span>
-                            </div>
-
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                        </form>
-                    </div>
+        <div class="form-wrap">
+            <h3>Send Us a Message</h3>
+            <div class="success-message" id="successMsg"><strong>Thank you!</strong> Your message has been sent. We will respond within 24 hours.</div>
+            <form id="contactForm" action="#" method="POST" novalidate>
+                <div class="form-group" id="grp-contactName">
+                    <label for="contactName">Full Name *</label>
+                    <input type="text" id="contactName" name="contactName" placeholder="Enter your full name">
+                    <span class="error-message">Please enter your full name (at least 2 characters).</span>
                 </div>
-            </div>
-        </section>
+                <div class="form-group" id="grp-contactEmail">
+                    <label for="contactEmail">Email Address *</label>
+                    <input type="email" id="contactEmail" name="contactEmail" placeholder="your.email@example.com">
+                    <span class="error-message">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group" id="grp-subject">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject">
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="general">General Enquiry</option>
+                        <option value="services">Services Information</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="donation">Donation Query</option>
+                        <option value="media">Media &amp; Press</option>
+                        <option value="complaint">Complaint or Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="error-message">Please select a subject.</span>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number (optional)</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" placeholder="+27 XX XXX XXXX">
+                </div>
+                <div class="form-group" id="grp-contactMessage">
+                    <label for="contactMessage">Your Message *</label>
+                    <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="How can we help you?"></textarea>
+                    <span class="error-message">Please enter a message (at least 10 characters).</span>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-        <!-- ==================== OFFICE LOCATIONS ==================== -->
-        <section class="section section-light" aria-label="Our office locations">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Offices</h2>
-                    <p>Visit us at any of our three regional offices across South Africa.</p>
-                </div>
-                <div class="locations-grid">
-                    <!-- Location 1: Cape Town (Head Office) -->
-                    <article class="location-card">
-                        <span class="location-icon">&#127968;</span>
-                        <h4>Cape Town (Head Office)</h4>
-                        <address>
-                            42 Water Street<br>
-                            Cape Town City Centre<br>
-                            Cape Town, 8001<br><br>
-                            <strong>Tel:</strong> <a href="tel:+27215550140">+27 21 555 0140</a><br>
-                            <strong>Email:</strong> <a href="mailto:capetown@waterforall.org.za">capetown@waterforall.org.za</a>
-                        </address>
-                    </article>
-                    <!-- Location 2: Durban -->
-                    <article class="location-card">
-                        <span class="location-icon">&#127968;</span>
-                        <h4>Durban (KZN Office)</h4>
-                        <address>
-                            15 Maritime Place, Suite 302<br>
-                            Durban Central<br>
-                            Durban, 4001<br><br>
-                            <strong>Tel:</strong> <a href="tel:+27315550250">+27 31 555 0250</a><br>
-                            <strong>Email:</strong> <a href="mailto:durban@waterforall.org.za">durban@waterforall.org.za</a>
-                        </address>
-                    </article>
-                    <!-- Location 3: Polokwane -->
-                    <article class="location-card">
-                        <span class="location-icon">&#127968;</span>
-                        <h4>Polokwane (Limpopo Office)</h4>
-                        <address>
-                            8 Savannah Boulevard, Office Block B<br>
-                            Polokwane Central<br>
-                            Polokwane, 0699<br><br>
-                            <strong>Tel:</strong> <a href="tel:+27155550360">+27 15 555 0360</a><br>
-                            <strong>Email:</strong> <a href="mailto:polokwane@waterforall.org.za">polokwane@waterforall.org.za</a>
-                        </address>
-                    </article>
-                </div>
-
-                <!-- Map placeholder representing office locations -->
-                <div class="map-container" aria-label="Map showing office locations">
-                    <div class="map-placeholder">
-                        <span class="map-placeholder-icon">&#127758;</span>
-                        <h3 style="margin-bottom: 0.5rem;">Our Locations</h3>
-                        <p><strong>Cape Town</strong> &bull; <strong>Durban</strong> &bull; <strong>Polokwane</strong></p>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Interactive map integration available via Google Maps API</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== SOCIAL MEDIA ==================== -->
-        <section class="section" aria-label="Connect with us">
-            <div class="container text-center">
-                <h2>Connect With Us</h2>
-                <p>Follow us on social media to stay updated on our latest projects and impact stories.</p>
-                <div class="footer-social" style="justify-content: center; margin-top: 2rem;">
-                    <a href="#" class="social-icon" style="width: 50px; height: 50px; font-size: 1.3rem;" aria-label="Facebook">f</a>
-                    <a href="#" class="social-icon" style="width: 50px; height: 50px; font-size: 1.3rem;" aria-label="Twitter">X</a>
-                    <a href="#" class="social-icon" style="width: 50px; height: 50px; font-size: 1.3rem;" aria-label="Instagram">&#128247;</a>
-                    <a href="#" class="social-icon" style="width: 50px; height: 50px; font-size: 1.3rem;" aria-label="LinkedIn">in</a>
-                    <a href="#" class="social-icon" style="width: 50px; height: 50px; font-size: 1.3rem;" aria-label="YouTube">&#9654;</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="logo-text">Water <span>For All</span></span>
-                    <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">X</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">&#128247;</a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="enquiry.html">Enquiry</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Water Purification</a></li>
-                        <li><a href="services.html">Conservation Education</a></li>
-                        <li><a href="services.html">Community Outreach</a></li>
-                        <li><a href="services.html">Emergency Response</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>&#128205; 42 Water Street, Cape Town, 8001</li>
-                        <li>&#128222; +27 21 555 0140</li>
-                        <li>&#128231; info@waterforall.org.za</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
+<section class="locations">
+    <div class="locations-inner">
+        <div class="section-title"><h2>Our Offices</h2><p>Visit us at any of our three regional offices across South Africa.</p></div>
+        <div class="locations-grid">
+            <article class="location-card">
+                <span class="location-icon">&#127968;</span>
+                <h3>Cape Town (Head Office)</h3>
+                <address>42 Water Street<br>Cape Town City Centre<br>Cape Town, 8001<br><br><strong>Tel:</strong> <a href="tel:+27215550140">+27 21 555 0140</a><br><strong>Email:</strong> <a href="mailto:capetown@waterforall.org.za">capetown@waterforall.org.za</a></address>
+            </article>
+            <article class="location-card">
+                <span class="location-icon">&#127968;</span>
+                <h3>Durban (KZN Office)</h3>
+                <address>15 Maritime Place, Suite 302<br>Durban Central<br>Durban, 4001<br><br><strong>Tel:</strong> <a href="tel:+27315550250">+27 31 555 0250</a><br><strong>Email:</strong> <a href="mailto:durban@waterforall.org.za">durban@waterforall.org.za</a></address>
+            </article>
+            <article class="location-card">
+                <span class="location-icon">&#127968;</span>
+                <h3>Polokwane (Limpopo Office)</h3>
+                <address>8 Savannah Boulevard, Office Block B<br>Polokwane Central<br>Polokwane, 0699<br><br><strong>Tel:</strong> <a href="tel:+27155550360">+27 15 555 0360</a><br><strong>Email:</strong> <a href="mailto:polokwane@waterforall.org.za">polokwane@waterforall.org.za</a></address>
+            </article>
+        </div>
+        <div class="map">
+            <div class="map-placeholder">
+                <span>&#127758;</span>
+                <h3>Our Locations</h3>
+                <p><strong>Cape Town</strong> &bull; <strong>Durban</strong> &bull; <strong>Polokwane</strong></p>
+                <p style="font-size:.85rem">Interactive map integration available via Google Maps API</p>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="js/main.js"></script>
+<section class="social-section">
+    <div class="container" style="padding:0">
+        <h2>Connect With Us</h2>
+        <p>Follow us on social media to stay updated on our latest projects and impact stories.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div><h3>&#128167; Water For All</h3><p>A <strong>fictitious organisation</strong> created for educational purposes.</p></div>
+        <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Services</h4><ul><li><a href="services.html">Water Purification</a></li><li><a href="services.html">Conservation Education</a></li><li><a href="services.html">Community Outreach</a></li><li><a href="services.html">Emergency Response</a></li></ul></div>
+        <div><h4>Contact Us</h4><ul><li>42 Water Street, Cape Town, 8001</li><li>+27 21 555 0140</li><li><a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Water For All. <strong>This is a fictitious organisation</strong> for the WEDE5020 assignment. All content is fictional.</p></div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#9650;</button>
+
+<script>
+// ===== FORM VALIDATION =====
+(function(){
+    var form=document.getElementById('contactForm');
+    var successMsg=document.getElementById('successMsg');
+    function showError(fieldId,show){document.getElementById('grp-'+fieldId).classList.toggle('has-error',show)}
+    function validateEmail(email){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
+
+    form.addEventListener('submit',function(e){
+        e.preventDefault();var valid=true;
+        var name=document.getElementById('contactName').value.trim();
+        var email=document.getElementById('contactEmail').value.trim();
+        var subject=document.getElementById('subject').value;
+        var message=document.getElementById('contactMessage').value.trim();
+
+        if(name.length<2){showError('contactName',true);valid=false}else{showError('contactName',false)}
+        if(!validateEmail(email)){showError('contactEmail',true);valid=false}else{showError('contactEmail',false)}
+        if(!subject){showError('subject',true);valid=false}else{showError('subject',false)}
+        if(message.length<10){showError('contactMessage',true);valid=false}else{showError('contactMessage',false)}
+
+        if(valid){successMsg.classList.add('visible');form.reset();setTimeout(function(){successMsg.classList.remove('visible')},5000)}
+    });
+
+    ['contactName','contactEmail','subject','contactMessage'].forEach(function(id){
+        document.getElementById(id).addEventListener('input',function(){showError(id,false)});
+    });
+})();
+
+// ===== SCROLL TO TOP =====
+var scrollTopBtn=document.getElementById('scrollTop');
+window.addEventListener('scroll',function(){scrollTopBtn.classList.toggle('visible',window.pageYOffset>500)});
+scrollTopBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+
 </body>
 </html>

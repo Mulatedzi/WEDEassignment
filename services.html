@@ -1,227 +1,124 @@
 <!DOCTYPE html>
-<!--
-    Water For All - Services Page (services.html)
-    Detailed information about the organisation's services
-    and product offerings including purification, education,
-    community outreach, and emergency response.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Water For All's services including water purification, conservation education, community outreach, and emergency response.">
-    <title>Our Services | Water For All</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Our Services | Water For All - Water Purification &amp; Education</title>
+    <meta name="description" content="Discover Water For All's services: water purification systems, conservation education, community outreach, emergency response, and corporate partnerships across South Africa.">
+    <meta name="keywords" content="water purification, conservation education, community outreach, emergency water response, South Africa, water quality testing">
+    <link rel="canonical" href="https://waterforall.org.za/services.html">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:16px;line-height:1.6;color:#1A1A2E}
+        img{max-width:100%;height:auto;display:block;border-radius:8px 8px 0 0}
+        a{color:#0077B6;text-decoration:none;transition:color .3s}a:hover{color:#00B4D8;text-decoration:underline}
+        .fictitious-banner{background:#FF6B35;color:#fff;text-align:center;padding:.5rem;font-size:.85rem;font-weight:600}
+        header{background:#023E8A;color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+        header h1{font-size:1.5rem}header h1 a{color:#fff}header h1 a:hover{text-decoration:none}
+        nav ul{display:flex;list-style:none;gap:2rem}nav a{color:#fff;font-weight:500;padding:.5rem 0;position:relative}
+        nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#90E0EF;transition:width .3s}nav a:hover::after{width:100%}nav a:hover{color:#90E0EF;text-decoration:none}nav a.active::after{width:100%}
+        #menu-checkbox{display:none}.menu-icon{display:none;cursor:pointer;font-size:1.5rem;color:#fff}
+        .page-hero{background:linear-gradient(135deg,#023E8A,#0077B6,#00B4D8);color:#fff;padding:4rem 0;text-align:center}
+        .page-hero h2{font-size:2.5rem;color:#fff}.page-hero p{color:#CAF0F8;font-size:1.2rem;max-width:700px;margin:.5rem auto 0}
+        .container{width:90%;max-width:1200px;margin:0 auto;padding:4rem 0}
+        .section-title{text-align:center;margin-bottom:3rem}.section-title h2{font-size:2rem;color:#023E8A}
+        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .service-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s}
+        .service-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+        .service-card img{width:100%;height:200px;object-fit:cover}
+        .service-body{padding:1.5rem}.service-body h3{color:#023E8A;margin-bottom:.5rem}.service-body p{color:#444;font-size:.95rem;margin-bottom:.75rem}.service-body .includes{color:#0077B6;font-size:.9rem}
+        .features{background:#F8FCFD}.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .feature-card{background:#fff;border-radius:12px;padding:2.5rem 2rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .3s}
+        .feature-card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+        .feature-icon{font-size:3rem;margin-bottom:1rem;display:block}.feature-card h3{color:#023E8A;margin-bottom:.75rem}.feature-card p{color:#6C757D;font-size:.95rem}
+        .stats{background:#023E8A;color:#fff;padding:4rem 0;text-align:center}.stats h2{color:#fff;font-size:2rem;margin-bottom:.5rem}.stats>p{color:#90E0EF;margin-bottom:2rem}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1200px;margin:0 auto;width:90%}
+        .stat-number{font-size:3rem;font-weight:700;color:#90E0EF;display:block}.stat-label{font-size:.9rem;color:#CAF0F8;text-transform:uppercase;letter-spacing:1px}
+        .cta{background:#0077B6;color:#fff;padding:4rem 0;text-align:center}.cta h2{color:#fff;font-size:2.5rem;margin-bottom:1rem}.cta>p{color:#CAF0F8;font-size:1.2rem;margin-bottom:2rem}
+        .btn{display:inline-block;padding:14px 36px;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;border:none;text-decoration:none;transition:all .3s}.btn:hover{text-decoration:none;transform:translateY(-2px)}
+        .btn-primary{background:#00B4D8;color:#fff}.btn-primary:hover{background:#0077B6}
+        .btn-secondary{background:transparent;color:#fff;border:2px solid #fff}.btn-secondary:hover{background:#fff;color:#0077B6}
+        footer{background:#023E8A;color:#fff;padding:3rem 0 1rem}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;max-width:1200px;margin:0 auto;width:90%}
+        footer h3,footer h4{color:#90E0EF;margin-bottom:1rem}footer p,footer li{color:rgba(255,255,255,.8);font-size:.9rem}footer ul{list-style:none}footer li{margin-bottom:.5rem}footer a{color:rgba(255,255,255,.8)}footer a:hover{color:#90E0EF}
+        .footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:2rem;color:rgba(255,255,255,.6);font-size:.85rem}
+        .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#00B4D8;color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:all .3s;z-index:999}.scroll-top.visible{opacity:1;visibility:visible}.scroll-top:hover{background:#023E8A}
+        @media(max-width:768px){header{flex-wrap:wrap}.menu-icon{display:block}nav{display:none;width:100%}nav ul{flex-direction:column;gap:0;padding:1rem 0}#menu-checkbox:checked~nav{display:block}.services-grid,.features-grid,.stats-grid,.footer-grid{grid-template-columns:1fr}.page-hero h2{font-size:2rem}}
+    </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="fictitious-banner">&#9888; Water For All is a <strong>fictitious organisation</strong> created for the WEDE5020 Web Development assignment.</div>
+<header>
+    <h1><a href="index.html">&#128167; Water For All</a></h1>
+    <label for="menu-checkbox" class="menu-icon">&#9776;</label>
+    <input type="checkbox" id="menu-checkbox">
+    <nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+</header>
 
-    <!-- ==================== HEADER ==================== -->
-    <header class="site-header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-icon">&#128167;</span>
-                    <span class="logo-text">Water <span>For All</span></span>
-                </a>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-            <nav class="main-nav" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="enquiry.html">Enquiry</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<section class="page-hero">
+    <h2>Our Services</h2>
+    <p>Comprehensive water solutions designed to meet the unique needs of communities across South Africa.</p>
+</section>
+
+<div style="background:#F8FCFD">
+    <div class="container">
+        <div class="section-title"><h2>What We Offer</h2><p>From cutting-edge purification technology to grassroots education.</p></div>
+        <div class="services-grid">
+            <article class="service-card">
+                <img src="images/service-purification.jpg" alt="Modern water purification system with transparent filtration tubes">
+                <div class="service-body"><h3>Water Purification Systems</h3><p>We design, install, and maintain advanced purification stations using multi-stage filtration, UV sterilisation, and reverse osmosis.</p><p class="includes"><strong>Includes:</strong> Installation, maintenance, water quality testing.</p></div>
+            </article>
+            <article class="service-card">
+                <img src="images/service-conservation.jpg" alt="Aerial view of a clean river flowing through green landscape">
+                <div class="service-body"><h3>Conservation Education</h3><p>Our programmes teach schools and communities about water conservation, hygiene, and sustainable management.</p><p class="includes"><strong>Includes:</strong> Workshops, training materials, school programmes.</p></div>
+            </article>
+            <article class="service-card">
+                <img src="images/service-community.jpg" alt="Community members collecting clean water from a dispensing station">
+                <div class="service-body"><h3>Community Outreach</h3><p>We work directly with communities to assess needs, deploy resources, and build local capacity for lasting impact.</p><p class="includes"><strong>Includes:</strong> Needs assessment, volunteer training, ongoing support.</p></div>
+            </article>
         </div>
-    </header>
+    </div>
+</div>
 
-    <main id="main-content">
+<div class="container">
+    <div class="section-title"><h2>Additional Programmes</h2><p>Beyond our core services, we offer specialised programmes.</p></div>
+    <div class="features-grid">
+        <article class="feature-card"><span class="feature-icon">&#128658;</span><h3>Emergency Water Response</h3><p>Rapid deployment of mobile purification units during droughts, floods, or infrastructure failures within 24 hours.</p></article>
+        <article class="feature-card"><span class="feature-icon">&#128300;</span><h3>Water Quality Testing</h3><p>Comprehensive testing for bacteria, heavy metals, and chemical contaminants with detailed reports.</p></article>
+        <article class="feature-card"><span class="feature-icon">&#128221;</span><h3>Corporate Partnerships</h3><p>Partner with businesses to fulfil CSI mandates through meaningful water projects with full impact reporting.</p></article>
+        <article class="feature-card"><span class="feature-icon">&#127963;</span><h3>Government Collaboration</h3><p>Work alongside municipalities to supplement public water infrastructure in resource-stretched areas.</p></article>
+        <article class="feature-card"><span class="feature-icon">&#127891;</span><h3>Youth Water Steward Training</h3><p>Vocational programme training young people as certified water technicians and community educators.</p></article>
+        <article class="feature-card"><span class="feature-icon">&#128161;</span><h3>Research &amp; Development</h3><p>Continuous research into new water technologies from ceramic filters to atmospheric water generators.</p></article>
+    </div>
+</div>
 
-        <!-- ==================== SERVICES HERO ==================== -->
-        <section class="about-hero" aria-label="Services introduction">
-            <div class="container">
-                <h1>Our Services</h1>
-                <p>Comprehensive water solutions designed to meet the unique needs of communities across South Africa.</p>
-            </div>
-        </section>
+<section class="stats">
+    <h2>Our Service Areas</h2>
+    <p>We currently operate across four provinces in South Africa.</p>
+    <div class="stats-grid">
+        <div class="stat-item"><span class="stat-number">45</span><span class="stat-label">Eastern Cape Sites</span></div>
+        <div class="stat-item"><span class="stat-number">38</span><span class="stat-label">KwaZulu-Natal Sites</span></div>
+        <div class="stat-item"><span class="stat-number">35</span><span class="stat-label">Limpopo Sites</span></div>
+        <div class="stat-item"><span class="stat-number">32</span><span class="stat-label">Mpumalanga Sites</span></div>
+    </div>
+</section>
 
-        <!-- ==================== MAIN SERVICES GRID ==================== -->
-        <section class="section section-light" aria-label="Core services">
-            <div class="container">
-                <div class="section-header">
-                    <h2>What We Offer</h2>
-                    <p>From cutting-edge purification technology to grassroots education, our services cover every aspect of water access and sustainability.</p>
-                </div>
-                <div class="services-grid">
-                    <!-- Service 1: Water Purification -->
-                    <article class="service-card">
-                        <img src="images/service-purification.jpg" alt="Modern water purification system with transparent filtration tubes">
-                        <div class="service-content">
-                            <h3>Water Purification Systems</h3>
-                            <p>We design, install, and maintain advanced water purification stations using multi-stage filtration, UV sterilisation, and reverse osmosis technology. Our systems are solar-powered and built to withstand local environmental conditions.</p>
-                            <p style="font-size: 0.9rem; color: #0077B6;"><strong>Includes:</strong> Installation, maintenance, water quality testing, and replacement parts.</p>
-                        </div>
-                    </article>
-                    <!-- Service 2: Conservation Education -->
-                    <article class="service-card">
-                        <img src="images/service-conservation.jpg" alt="Aerial view of a clean river flowing through green landscape">
-                        <div class="service-content">
-                            <h3>Conservation Education</h3>
-                            <p>Our educational programmes teach schools and communities about water conservation, hygiene, and sustainable water management. We develop customised curricula for different age groups and community contexts.</p>
-                            <p style="font-size: 0.9rem; color: #0077B6;"><strong>Includes:</strong> Workshops, training materials, school programmes, and community seminars.</p>
-                        </div>
-                    </article>
-                    <!-- Service 3: Community Outreach -->
-                    <article class="service-card">
-                        <img src="images/service-community.jpg" alt="Community members collecting clean water from a dispensing station">
-                        <div class="service-content">
-                            <h3>Community Outreach</h3>
-                            <p>We work directly with communities to assess needs, deploy resources, and build local capacity. Our outreach teams partner with traditional leaders, schools, and local organisations to ensure lasting impact.</p>
-                            <p style="font-size: 0.9rem; color: #0077B6;"><strong>Includes:</strong> Needs assessment, community engagement, volunteer training, and ongoing support.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+<section class="cta"><div class="container"><h2>Need Our Services in Your Community?</h2><p>Contact us to discuss how we can bring clean water solutions to your area.</p><a href="enquiry.html" class="btn btn-secondary">Make an Enquiry</a></div></section>
 
-        <!-- ==================== ADDITIONAL SERVICES ==================== -->
-        <section class="section" aria-label="Additional programmes">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Additional Programmes</h2>
-                    <p>Beyond our core services, we offer specialised programmes to address specific community needs.</p>
-                </div>
-                <div class="features-grid">
-                    <!-- Programme 1: Emergency Response -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#128658;</span>
-                        <h3>Emergency Water Response</h3>
-                        <p>Rapid deployment of mobile purification units during droughts, floods, or infrastructure failures. Our emergency teams can be on-site within 24 hours to provide immediate clean water access to affected communities.</p>
-                    </article>
-                    <!-- Programme 2: Water Testing -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#128300;</span>
-                        <h3>Water Quality Testing</h3>
-                        <p>Comprehensive water testing services for communities, schools, and municipalities. We test for bacteria, heavy metals, chemical contaminants, and other pollutants, providing detailed reports and remediation recommendations.</p>
-                    </article>
-                    <!-- Programme 3: Corporate Partnerships -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#128221;</span>
-                        <h3>Corporate Partnerships</h3>
-                        <p>We partner with businesses to fulfil their CSI mandates through meaningful water projects. Our team handles project design, implementation, reporting, and impact measurement for corporate sponsors.</p>
-                    </article>
-                    <!-- Programme 4: Government Collaboration -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#127963;</span>
-                        <h3>Government Collaboration</h3>
-                        <p>We work alongside municipal and provincial governments to supplement public water infrastructure, particularly in areas where government resources are stretched. Our partnerships are transparent and aligned with national water policy.</p>
-                    </article>
-                    <!-- Programme 5: Youth Training -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#127891;</span>
-                        <h3>Youth Water Steward Training</h3>
-                        <p>A vocational programme that trains young people from underserved communities to become certified water technicians and community educators, creating employment while building local expertise.</p>
-                    </article>
-                    <!-- Programme 6: Research & Development -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#128161;</span>
-                        <h3>Research &amp; Development</h3>
-                        <p>We continuously research and test new water technologies, from low-cost ceramic filters to atmospheric water generators, to find the most effective solutions for South African conditions.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+<footer>
+    <div class="footer-grid">
+        <div><h3>&#128167; Water For All</h3><p>A <strong>fictitious organisation</strong> created for educational purposes.</p></div>
+        <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Services</h4><ul><li><a href="services.html">Water Purification</a></li><li><a href="services.html">Conservation Education</a></li><li><a href="services.html">Community Outreach</a></li><li><a href="services.html">Emergency Response</a></li></ul></div>
+        <div><h4>Contact Us</h4><ul><li>42 Water Street, Cape Town, 8001</li><li>+27 21 555 0140</li><li><a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Water For All. <strong>This is a fictitious organisation</strong> for the WEDE5020 assignment. All content is fictional.</p></div>
+</footer>
 
-        <!-- ==================== SERVICE AREAS ==================== -->
-        <section class="section section-dark" aria-label="Where we work">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Service Areas</h2>
-                    <p>We currently operate across four provinces in South Africa, with plans for national expansion by 2027.</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="45">0</span>
-                        <span class="stat-label">Eastern Cape Sites</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="38">0</span>
-                        <span class="stat-label">KwaZulu-Natal Sites</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="35">0</span>
-                        <span class="stat-label">Limpopo Sites</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="32">0</span>
-                        <span class="stat-label">Mpumalanga Sites</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== CTA ==================== -->
-        <section class="cta-section" aria-label="Enquire about our services">
-            <div class="container">
-                <h2>Need Our Services in Your Community?</h2>
-                <p>Contact us to discuss how we can bring clean water solutions to your area.</p>
-                <a href="enquiry.html" class="btn btn-primary" style="background: #fff; color: #0077B6;">Make an Enquiry</a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="logo-text">Water <span>For All</span></span>
-                    <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">X</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">&#128247;</a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="enquiry.html">Enquiry</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Water Purification</a></li>
-                        <li><a href="services.html">Conservation Education</a></li>
-                        <li><a href="services.html">Community Outreach</a></li>
-                        <li><a href="services.html">Emergency Response</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>&#128205; 42 Water Street, Cape Town, 8001</li>
-                        <li>&#128222; +27 21 555 0140</li>
-                        <li>&#128231; info@waterforall.org.za</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#9650;</button>
+<script>
+    const scrollTopBtn=document.getElementById('scrollTop');
+    window.addEventListener('scroll',function(){scrollTopBtn.classList.toggle('visible',window.pageYOffset>500)});
+    scrollTopBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
 </body>
 </html>

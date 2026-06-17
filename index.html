@@ -1,228 +1,245 @@
 <!DOCTYPE html>
-<!--
-    Water For All - Homepage (index.html)
-    This is the main landing page featuring a hero section,
-    statistics about the organisation's impact, and key features.
--->
 <html lang="en">
 <head>
-    <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Water For All - Providing clean, safe drinking water to communities across South Africa.">
     <title>Water For All | Clean Water for Every Community</title>
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Water For All provides clean, safe drinking water to underserved communities across South Africa through water purification, conservation education, and community outreach.">
+    <meta name="keywords" content="clean water, water purification, South Africa, community outreach, water conservation, non-profit">
+    <meta name="author" content="Water For All">
+    <meta property="og:title" content="Water For All | Clean Water for Every Community">
+    <meta property="og:description" content="Providing sustainable access to clean, safe drinking water across South Africa.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://waterforall.org.za/index.html">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:16px;line-height:1.6;color:#1A1A2E}
+        img{max-width:100%;height:auto;display:block}
+        a{color:#0077B6;text-decoration:none;transition:color .3s}
+        a:hover{color:#00B4D8;text-decoration:underline}
+
+        /* Fictitious banner */
+        .fictitious-banner{background:#FF6B35;color:#fff;text-align:center;padding:.5rem;font-size:.85rem;font-weight:600}
+        .fictitious-banner a{color:#fff;text-decoration:underline}
+
+        /* Header */
+        header{background:#023E8A;color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+        header h1{font-size:1.5rem}header h1 a{color:#fff}header h1 a:hover{text-decoration:none}
+        nav ul{display:flex;list-style:none;gap:2rem}
+        nav a{color:#fff;font-weight:500;padding:.5rem 0;position:relative}
+        nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#90E0EF;transition:width .3s}
+        nav a:hover::after{width:100%}nav a:hover{color:#90E0EF;text-decoration:none}
+        nav a.active::after{width:100%}
+        #menu-checkbox{display:none}.menu-icon{display:none;cursor:pointer;font-size:1.5rem;color:#fff}
+
+        /* Hero */
+        .hero{position:relative;height:70vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+        .hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+        .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(2,62,138,.75) 0%,rgba(0,119,182,.6) 100%);z-index:1}
+        .hero-text{position:relative;z-index:2;color:#fff;max-width:800px;padding:2rem;opacity:0;animation:fadeInUp 1s ease forwards}
+        .hero-text h2{font-size:3rem;color:#fff;margin-bottom:1rem}
+        .hero-text p{font-size:1.3rem;color:#CAF0F8;margin-bottom:2rem}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+        /* Buttons */
+        .btn{display:inline-block;padding:14px 36px;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;border:none;text-decoration:none;transition:all .3s}
+        .btn:hover{text-decoration:none;transform:translateY(-2px)}
+        .btn-primary{background:#00B4D8;color:#fff;margin-right:1rem;box-shadow:0 4px 15px rgba(0,180,216,.4)}
+        .btn-primary:hover{background:#0077B6;color:#fff}
+        .btn-secondary{background:transparent;color:#fff;border:2px solid #fff}
+        .btn-secondary:hover{background:#fff;color:#0077B6}
+
+        /* Stats */
+        .stats{background:#023E8A;color:#fff;padding:4rem 0;text-align:center}
+        .stats h2{color:#fff;font-size:2rem;margin-bottom:.5rem}
+        .stats>p{color:#90E0EF;margin-bottom:2rem}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1200px;margin:0 auto;width:90%}
+        .stat-item{text-align:center;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease forwards}
+        .stat-item:nth-child(1){animation-delay:.2s}.stat-item:nth-child(2){animation-delay:.4s}
+        .stat-item:nth-child(3){animation-delay:.6s}.stat-item:nth-child(4){animation-delay:.8s}
+        .stat-number{font-size:3rem;font-weight:700;color:#90E0EF;display:block}
+        .stat-label{font-size:.9rem;color:#CAF0F8;text-transform:uppercase;letter-spacing:1px}
+
+        /* Container and sections */
+        .container{width:90%;max-width:1200px;margin:0 auto;padding:4rem 0}
+        .section-title{text-align:center;margin-bottom:3rem}
+        .section-title h2{font-size:2rem;color:#023E8A}
+        .section-title p{color:#6C757D;max-width:600px;margin:.5rem auto 0}
+        .features{background:#F8FCFD}
+        .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .feature-card{background:#fff;border-radius:12px;padding:2.5rem 2rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s}
+        .feature-card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+        .feature-icon{font-size:3rem;margin-bottom:1rem;display:block}
+        .feature-card h3{color:#023E8A;margin-bottom:.75rem}
+        .feature-card p{color:#6C757D;font-size:.95rem}
+
+        .mission{text-align:center;padding:4rem 0}
+        .mission p{font-size:1.25rem;max-width:800px;margin:0 auto 2rem;color:#555}
+
+        .cta{background:#0077B6;color:#fff;padding:4rem 0;text-align:center}
+        .cta h2{color:#fff;font-size:2.5rem;margin-bottom:1rem}
+        .cta>p{color:#CAF0F8;font-size:1.2rem;margin-bottom:2rem}
+
+        /* Footer */
+        footer{background:#023E8A;color:#fff;padding:3rem 0 1rem}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;max-width:1200px;margin:0 auto;width:90%}
+        footer h3,footer h4{color:#90E0EF;margin-bottom:1rem}
+        footer p,footer li{color:rgba(255,255,255,.8);font-size:.9rem}
+        footer ul{list-style:none}footer li{margin-bottom:.5rem}
+        footer a{color:rgba(255,255,255,.8)}footer a:hover{color:#90E0EF}
+        .social-links{margin-top:1rem}.social-links a{margin-right:1rem}
+        .footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:2rem;color:rgba(255,255,255,.6);font-size:.85rem}
+
+        /* Scroll to top */
+        .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#00B4D8;color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:all .3s;z-index:999}
+        .scroll-top.visible{opacity:1;visibility:visible}
+        .scroll-top:hover{background:#023E8A;transform:translateY(-3px)}
+
+        @media(max-width:768px){
+            header{flex-wrap:wrap}.menu-icon{display:block}nav{display:none;width:100%}
+            nav ul{flex-direction:column;gap:0;padding:1rem 0}nav ul li{padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+            #menu-checkbox:checked~nav{display:block}
+            .hero-text h2{font-size:2rem}.stats-grid,.features-grid,.footer-grid{grid-template-columns:1fr}
+            .btn{display:block;margin:.5rem auto;text-align:center}.btn-primary{margin-right:auto}
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to content link for keyboard accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ============================================================ -->
-    <!-- SITE HEADER with Logo and Navigation -->
-    <!-- ============================================================ -->
-    <header class="site-header">
-        <div class="container header-container">
-            <!-- Logo with water drop icon -->
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-icon">&#128167;</span>
-                    <span class="logo-text">Water <span>For All</span></span>
-                </a>
-            </div>
-            <!-- Mobile menu toggle button -->
-            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-            <!-- Main navigation menu -->
-            <nav class="main-nav" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="enquiry.html">Enquiry</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<div class="fictitious-banner">&#9888; Water For All is a <strong>fictitious organisation</strong> created for the WEDE5020 Web Development assignment. All content is fictional.</div>
+
+<header>
+    <h1><a href="index.html">&#128167; Water For All</a></h1>
+    <label for="menu-checkbox" class="menu-icon">&#9776;</label>
+    <input type="checkbox" id="menu-checkbox">
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <img src="images/hero-home.jpg" alt="Crystal clear water drop creating ripples in a pool">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h2>Clean Water for Every Community</h2>
+        <p>Water For All is dedicated to providing sustainable access to safe, clean drinking water across underserved communities in South Africa.</p>
+        <a href="services.html" class="btn btn-primary">Our Services</a>
+        <a href="enquiry.html" class="btn btn-secondary">Get Involved</a>
+    </div>
+</section>
+
+<section class="stats">
+    <h2>Our Impact</h2>
+    <p>Together, we are making a measurable difference in communities across the nation.</p>
+    <div class="stats-grid">
+        <div class="stat-item"><span class="stat-number">150</span><span class="stat-label">Communities Served</span></div>
+        <div class="stat-item"><span class="stat-number">75,000</span><span class="stat-label">People with Water Access</span></div>
+        <div class="stat-item"><span class="stat-number">320</span><span class="stat-label">Water Stations</span></div>
+        <div class="stat-item"><span class="stat-number">1,200</span><span class="stat-label">Active Volunteers</span></div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="section-title">
+            <h2>What We Do</h2>
+            <p>Through innovative water solutions and community-driven programmes, we bring lasting change to those who need it most.</p>
         </div>
-    </header>
+        <div class="features-grid">
+            <article class="feature-card">
+                <span class="feature-icon">&#128167;</span>
+                <h3>Water Purification</h3>
+                <p>We install and maintain state-of-the-art water purification systems that remove contaminants and deliver safe drinking water.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-icon">&#127793;</span>
+                <h3>Conservation Education</h3>
+                <p>Our educational programmes teach communities about water conservation, hygiene practices, and sustainable management.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-icon">&#129309;</span>
+                <h3>Community Outreach</h3>
+                <p>We partner with local leaders and organisations to identify needs, deploy resources, and build community capacity.</p>
+            </article>
+        </div>
+    </div>
+</section>
 
-    <!-- ============================================================ -->
-    <!-- MAIN CONTENT -->
-    <!-- ============================================================ -->
-    <main id="main-content">
+<section class="mission">
+    <div class="container">
+        <h2>Our Mission</h2>
+        <p>To ensure that every person in South Africa has access to clean, safe drinking water by 2035 through sustainable infrastructure, community empowerment, and innovative water solutions.</p>
+        <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+    </div>
+</section>
 
-        <!-- ============================================================ -->
-        <!-- HERO SECTION -->
-        <!-- Full-width banner with background image, heading, and CTA -->
-        <!-- ============================================================ -->
-        <section class="hero" aria-label="Welcome banner">
-            <!-- Background image -->
-            <img src="images/hero-home.jpg" alt="Crystal clear water drop creating ripples" class="hero-bg">
-            <!-- Semi-transparent overlay for text readability -->
-            <div class="hero-overlay"></div>
-            <!-- Hero content: heading, tagline, and call-to-action buttons -->
-            <div class="hero-content">
-                <h1>Clean Water for Every Community</h1>
-                <p class="hero-tagline">Water For All is dedicated to providing sustainable access to safe, clean drinking water across underserved communities in South Africa.</p>
-                <div class="hero-buttons">
-                    <a href="services.html" class="btn btn-primary">Our Services</a>
-                    <a href="enquiry.html" class="btn btn-secondary">Get Involved</a>
-                </div>
-            </div>
-        </section>
+<section class="cta">
+    <div class="container">
+        <h2>Be Part of the Solution</h2>
+        <p>Whether you want to volunteer, partner with us, or learn more, we would love to hear from you.</p>
+        <a href="enquiry.html" class="btn btn-secondary">Get Involved Today</a>
+    </div>
+</section>
 
-        <!-- ============================================================ -->
-        <!-- IMPACT STATISTICS SECTION -->
-        <!-- Displays key metrics about the organisation's achievements -->
-        <!-- ============================================================ -->
-        <section class="section section-dark" aria-label="Our impact statistics">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Impact</h2>
-                    <p>Together, we are making a measurable difference in communities across the nation.</p>
-                </div>
-                <div class="stats-grid">
-                    <!-- Stat item 1: Communities served -->
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="150">0</span>
-                        <span class="stat-label">Communities Served</span>
-                    </div>
-                    <!-- Stat item 2: People with water access -->
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="75000">0</span>
-                        <span class="stat-label">People with Water Access</span>
-                    </div>
-                    <!-- Stat item 3: Water stations installed -->
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="320">0</span>
-                        <span class="stat-label">Water Stations</span>
-                    </div>
-                    <!-- Stat item 4: Volunteer network -->
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="1200">0</span>
-                        <span class="stat-label">Active Volunteers</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- FEATURES / KEY SERVICES SECTION -->
-        <!-- Three feature cards highlighting the organisation's main focus areas -->
-        <!-- ============================================================ -->
-        <section class="section section-light" aria-label="What we do">
-            <div class="container">
-                <div class="section-header">
-                    <h2>What We Do</h2>
-                    <p>Through innovative water solutions and community-driven programmes, we bring lasting change to those who need it most.</p>
-                </div>
-                <div class="features-grid">
-                    <!-- Feature 1: Water Purification -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#128167;</span>
-                        <h3>Water Purification</h3>
-                        <p>We install and maintain state-of-the-art water purification systems that remove contaminants and deliver safe drinking water to communities without reliable access.</p>
-                    </article>
-                    <!-- Feature 2: Conservation Education -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#127793;</span>
-                        <h3>Conservation Education</h3>
-                        <p>Our educational programmes teach communities about water conservation, hygiene practices, and sustainable water management for long-term self-sufficiency.</p>
-                    </article>
-                    <!-- Feature 3: Community Outreach -->
-                    <article class="feature-card">
-                        <span class="feature-icon">&#129309;</span>
-                        <h3>Community Outreach</h3>
-                        <p>We partner with local leaders, schools, and organisations to identify needs, deploy resources, and build community capacity for maintaining water infrastructure.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- MISSION STATEMENT SECTION -->
-        <!-- Brief statement about the organisation's mission -->
-        <!-- ============================================================ -->
-        <section class="section" aria-label="Our mission">
-            <div class="container text-center">
-                <h2>Our Mission</h2>
-                <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 2rem; color: #555;">
-                    To ensure that every person in South Africa has access to clean, safe drinking water by 2035 through sustainable infrastructure, community empowerment, and innovative water solutions.
-                </p>
-                <a href="about.html" class="btn btn-primary">Learn More About Us</a>
-            </div>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- CALL-TO-ACTION SECTION -->
-        <!-- Encourages visitors to take action -->
-        <!-- ============================================================ -->
-        <section class="cta-section" aria-label="Get involved">
-            <div class="container">
-                <h2>Be Part of the Solution</h2>
-                <p>Whether you want to volunteer, partner with us, or simply learn more, we would love to hear from you.</p>
-                <a href="enquiry.html" class="btn btn-primary" style="background: #fff; color: #0077B6;">Get Involved Today</a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ============================================================ -->
-    <!-- SITE FOOTER -->
-    <!-- Contains logo, quick links, contact info, and social links -->
-    <!-- ============================================================ -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Brand column -->
-                <div class="footer-brand">
-                    <span class="logo-text">Water <span>For All</span></span>
-                    <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">X</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">&#128247;</a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-                <!-- Quick links column -->
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="enquiry.html">Enquiry</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Services column -->
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Water Purification</a></li>
-                        <li><a href="services.html">Conservation Education</a></li>
-                        <li><a href="services.html">Community Outreach</a></li>
-                        <li><a href="services.html">Emergency Response</a></li>
-                    </ul>
-                </div>
-                <!-- Contact column -->
-                <div class="footer-links">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>&#128205; 42 Water Street, Cape Town, 8001</li>
-                        <li>&#128222; +27 21 555 0140</li>
-                        <li>&#128231; info@waterforall.org.za</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Copyright bar -->
-            <div class="footer-bottom">
-                <p>&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>&#128167; Water For All</h3>
+            <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019. <strong>This is a fictitious organisation.</strong></p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
             </div>
         </div>
-    </footer>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="services.html">Water Purification</a></li>
+                <li><a href="services.html">Conservation Education</a></li>
+                <li><a href="services.html">Community Outreach</a></li>
+                <li><a href="services.html">Emergency Response</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact Us</h4>
+            <ul>
+                <li>42 Water Street, Cape Town, 8001</li>
+                <li>+27 21 555 0140</li>
+                <li><a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Water For All. <strong>This is a fictitious organisation</strong> created for the WEDE5020 Web Development assignment. All content is fictional and for educational purposes only.</p>
+    </div>
+</footer>
 
-    <!-- Link to external JavaScript file -->
-    <script src="js/main.js"></script>
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#9650;</button>
+
+<script>
+    // Scroll-to-top button visibility
+    const scrollTopBtn=document.getElementById('scrollTop');
+    window.addEventListener('scroll',function(){scrollTopBtn.classList.toggle('visible',window.pageYOffset>500)});
+    scrollTopBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+
 </body>
 </html>

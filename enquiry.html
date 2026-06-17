@@ -1,262 +1,243 @@
 <!DOCTYPE html>
-<!--
-    Water For All - Enquiry Page (enquiry.html)
-    Form for product/service enquiries, volunteering,
-    sponsorship, and general questions.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Water For All. Enquire about services, volunteering, sponsorships, or partnerships.">
-    <title>Enquiry | Water For All</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Enquiry | Water For All - Services, Volunteering, Sponsorship</title>
+    <meta name="description" content="Enquire about Water For All's services, volunteering opportunities, or corporate sponsorships. Fill out our enquiry form and we will respond within 48 hours.">
+    <meta name="keywords" content="enquiry, volunteer, sponsorship, water services South Africa, get involved">
+    <link rel="canonical" href="https://waterforall.org.za/enquiry.html">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:16px;line-height:1.6;color:#1A1A2E}
+        a{color:#0077B6;text-decoration:none;transition:color .3s}a:hover{color:#00B4D8;text-decoration:underline}
+        .fictitious-banner{background:#FF6B35;color:#fff;text-align:center;padding:.5rem;font-size:.85rem;font-weight:600}
+        header{background:#023E8A;color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+        header h1{font-size:1.5rem}header h1 a{color:#fff}header h1 a:hover{text-decoration:none}
+        nav ul{display:flex;list-style:none;gap:2rem}nav a{color:#fff;font-weight:500;padding:.5rem 0;position:relative}
+        nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#90E0EF;transition:width .3s}nav a:hover::after{width:100%}nav a:hover{color:#90E0EF;text-decoration:none}nav a.active::after{width:100%}
+        #menu-checkbox{display:none}.menu-icon{display:none;cursor:pointer;font-size:1.5rem;color:#fff}
+        .page-hero{background:linear-gradient(135deg,#023E8A,#0077B6,#00B4D8);color:#fff;padding:4rem 0;text-align:center}
+        .page-hero h2{font-size:2.5rem;color:#fff}.page-hero p{color:#CAF0F8;font-size:1.2rem;max-width:700px;margin:.5rem auto 0}
+        .container{width:90%;max-width:1200px;margin:0 auto;padding:4rem 0}
+        .two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+
+        .enquiry-type{display:flex;gap:1rem;padding:1.5rem;background:#F8FCFD;border-radius:10px;margin-bottom:1rem;border-left:4px solid #0077B8B;transition:transform .2s}
+        .enquiry-type:hover{transform:translateX(5px)}
+        .enquiry-icon{font-size:2rem;flex-shrink:0}
+        .enquiry-type h4{color:#023E8A;margin-bottom:.25rem}.enquiry-type p{color:#6C757D;font-size:.9rem}
+
+        /* Accordion FAQ - CSS only */
+        .accordion{margin-top:1rem}
+        .accordion-item{border:1px solid #E0E0E0;border-radius:8px;margin-bottom:.5rem;overflow:hidden}
+        .accordion-header{display:block;padding:1rem 1.5rem;background:#F8FCFD;cursor:pointer;font-weight:600;color:#023E8A;position:relative;transition:background .2s}
+        .accordion-header:hover{background:#E8F4F8}
+        .accordion-header::after{content:'+';position:absolute;right:1.5rem;font-size:1.2rem;transition:transform .2s}
+        .accordion-input{display:none}
+        .accordion-input:checked~.accordion-header::after{content:'\2212'}
+        .accordion-input:checked~.accordion-body{max-height:300px;padding:1rem 1.5rem}
+        .accordion-body{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 1.5rem;background:#fff}
+        .accordion-body p{color:#555;font-size:.95rem}
+
+        /* Form */
+        .form-wrap{background:#F8FCFD;padding:2.5rem;border-radius:12px}
+        .form-group{margin-bottom:1.5rem}
+        .form-group label{display:block;margin-bottom:.5rem;font-weight:600;color:#023E8A}
+        .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border:2px solid #E0E0E0;border-radius:8px;font-size:1rem;font-family:inherit;transition:border-color .3s}
+        .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:#0077B6}
+        .form-group textarea{resize:vertical;min-height:120px}
+        .form-group.has-error input,.form-group.has-error textarea,.form-group.has-error select{border-color:#DC3545}
+        .error-message{color:#DC3545;font-size:.85rem;margin-top:.25rem;display:none}
+        .form-group.has-error .error-message{display:block}
+        .radio-group{display:flex;gap:1.5rem;flex-wrap:wrap}
+        .radio-group label{display:flex;align-items:center;gap:.5rem;font-weight:400;color:#444;cursor:pointer}
+        .radio-group input{width:auto}
+        .success-message{background:#d4edda;color:#155724;padding:1rem;border-radius:8px;margin-bottom:1.5rem;border:1px solid #c3e6cb;display:none}
+        .success-message.visible{display:block}
+
+        .btn{display:inline-block;padding:14px 36px;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;border:none;text-decoration:none;transition:all .3s}
+        .btn:hover{text-decoration:none;transform:translateY(-2px)}
+        .btn-primary{background:#00B4D8;color:#fff}.btn-primary:hover{background:#0077B6}
+        .btn-secondary{background:transparent;color:#fff;border:2px solid #fff}.btn-secondary:hover{background:#fff;color:#0077B6}
+
+        .cta{background:#0077B6;color:#fff;padding:4rem 0;text-align:center}.cta h2{color:#fff;font-size:2.5rem;margin-bottom:1rem}.cta>p{color:#CAF0F8;font-size:1.2rem;margin-bottom:2rem}
+        footer{background:#023E8A;color:#fff;padding:3rem 0 1rem}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;max-width:1200px;margin:0 auto;width:90%}
+        footer h3,footer h4{color:#90E0EF;margin-bottom:1rem}footer p,footer li{color:rgba(255,255,255,.8);font-size:.9rem}footer ul{list-style:none}footer li{margin-bottom:.5rem}footer a{color:rgba(255,255,255,.8)}footer a:hover{color:#90E0EF}
+        .footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;margin-top:2rem;color:rgba(255,255,255,.6);font-size:.85rem}
+        .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#00B4D8;color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:all .3s;z-index:999}.scroll-top.visible{opacity:1;visibility:visible}.scroll-top:hover{background:#023E8A}
+        @media(max-width:768px){header{flex-wrap:wrap}.menu-icon{display:block}nav{display:none;width:100%}nav ul{flex-direction:column;gap:0;padding:1rem 0}#menu-checkbox:checked~nav{display:block}.two-col,.footer-grid{grid-template-columns:1fr}.page-hero h2{font-size:2rem}}
+    </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="fictitious-banner">&#9888; Water For All is a <strong>fictitious organisation</strong> created for the WEDE5020 Web Development assignment.</div>
+<header>
+    <h1><a href="index.html">&#128167; Water For All</a></h1>
+    <label for="menu-checkbox" class="menu-icon">&#9776;</label>
+    <input type="checkbox" id="menu-checkbox">
+    <nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="enquiry.html" class="active">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+</header>
 
-    <!-- ==================== HEADER ==================== -->
-    <header class="site-header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-icon">&#128167;</span>
-                    <span class="logo-text">Water <span>For All</span></span>
-                </a>
+<section class="page-hero">
+    <h2>Make an Enquiry</h2>
+    <p>Interested in our services, volunteering, or partnering with us? We would love to hear from you.</p>
+</section>
+
+<div style="background:#F8FCFD">
+    <div class="container">
+        <div class="two-col">
+            <div>
+                <h3>How Can We Help You?</h3>
+                <p>Whether you are a community leader seeking water solutions, a business looking to partner with us, or an individual wanting to volunteer, please fill out the form and we will get back to you within 48 hours.</p>
+
+                <div class="enquiry-type">
+                    <span class="enquiry-icon">&#128167;</span>
+                    <div><h4>Service Enquiry</h4><p>Request water purification systems, educational programmes, or community outreach for your area.</p></div>
+                </div>
+                <div class="enquiry-type">
+                    <span class="enquiry-icon">&#129309;</span>
+                    <div><h4>Volunteer</h4><p>Join our network of over 1,200 volunteers helping communities access clean water.</p></div>
+                </div>
+                <div class="enquiry-type">
+                    <span class="enquiry-icon">&#128176;</span>
+                    <div><h4>Sponsorship</h4><p>Partner with us as a corporate sponsor to fund water projects and make a lasting impact.</p></div>
+                </div>
+
+                <h3 style="margin-top:2rem">Frequently Asked Questions</h3>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <input type="checkbox" id="faq1" class="accordion-input">
+                        <label for="faq1" class="accordion-header">How long does it take to install a water purification system?</label>
+                        <div class="accordion-body"><p>Depending on the community size and system type, installation typically takes 2-4 weeks from approval, including site assessment and equipment setup.</p></div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="faq2" class="accordion-input">
+                        <label for="faq2" class="accordion-header">Do you charge communities for your services?</label>
+                        <div class="accordion-body"><p>Our core services are provided free of charge to underserved communities. We are funded through donations, corporate sponsorships, and government grants.</p></div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="faq3" class="accordion-input">
+                        <label for="faq3" class="accordion-header">What qualifications do I need to volunteer?</label>
+                        <div class="accordion-body"><p>No specific qualifications are required. We welcome volunteers from all backgrounds and provide comprehensive training for all roles.</p></div>
+                    </div>
+                    <div class="accordion-item">
+                        <input type="checkbox" id="faq4" class="accordion-input">
+                        <label for="faq4" class="accordion-header">How can my company become a sponsor?</label>
+                        <div class="accordion-body"><p>Select "Sponsorship" in the form and our partnerships team will reach out to discuss tailored sponsorship opportunities.</p></div>
+                    </div>
+                </div>
             </div>
-            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-            <nav class="main-nav" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="enquiry.html" class="active">Enquiry</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main id="main-content">
-
-        <!-- ==================== ENQUIRY HERO ==================== -->
-        <section class="about-hero" aria-label="Enquiry introduction">
-            <div class="container">
-                <h1>Make an Enquiry</h1>
-                <p>Interested in our services, volunteering, or partnering with us? We would love to hear from you.</p>
-            </div>
-        </section>
-
-        <!-- ==================== ENQUIRY CONTENT ==================== -->
-        <section class="section section-light" aria-label="Enquiry form">
-            <div class="container">
-                <div class="enquiry-layout">
-                    <!-- Left column: Introduction and enquiry types -->
-                    <div class="enquiry-intro">
-                        <h2>How Can We Help You?</h2>
-                        <p>Whether you are a community leader seeking water solutions, a business looking to partner with us, or an individual wanting to volunteer, please fill out the form and we will get back to you within 48 hours.</p>
-
-                        <!-- Enquiry type descriptions -->
-                        <div class="enquiry-types">
-                            <div class="enquiry-type">
-                                <span class="enquiry-type-icon">&#128167;</span>
-                                <div>
-                                    <h4>Service Enquiry</h4>
-                                    <p>Request water purification systems, educational programmes, or community outreach for your area.</p>
-                                </div>
-                            </div>
-                            <div class="enquiry-type">
-                                <span class="enquiry-type-icon">&#129309;</span>
-                                <div>
-                                    <h4>Volunteer</h4>
-                                    <p>Join our network of over 1,200 volunteers helping communities access clean water.</p>
-                                </div>
-                            </div>
-                            <div class="enquiry-type">
-                                <span class="enquiry-type-icon">&#128176;</span>
-                                <div>
-                                    <h4>Sponsorship</h4>
-                                    <p>Partner with us as a corporate sponsor to fund water projects and make a lasting impact.</p>
-                                </div>
-                            </div>
+            <div class="form-wrap">
+                <h3>Enquiry Form</h3>
+                <div class="success-message" id="successMsg"><strong>Thank you!</strong> Your enquiry has been submitted successfully. We will respond within 48 hours.</div>
+                <form id="enquiryForm" action="#" method="POST" novalidate>
+                    <div class="form-group">
+                        <label>Enquiry Type *</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="enquiryType" value="service" checked> Service Enquiry</label>
+                            <label><input type="radio" name="enquiryType" value="volunteer"> Volunteer</label>
+                            <label><input type="radio" name="enquiryType" value="sponsorship"> Sponsorship</label>
                         </div>
                     </div>
-
-                    <!-- Right column: Enquiry form -->
-                    <div>
-                        <form id="enquiryForm" class="contact-form" action="#" method="POST" novalidate>
-                            <!-- Success message (hidden by default) -->
-                            <div class="form-success" style="display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid #c3e6cb;">
-                                <strong>Thank you!</strong> Your enquiry has been submitted successfully. We will respond within 48 hours.
-                            </div>
-
-                            <!-- Enquiry type selection -->
-                            <div class="form-group">
-                                <label>Enquiry Type *</label>
-                                <div class="radio-group">
-                                    <label>
-                                        <input type="radio" name="enquiryType" value="service" required checked>
-                                        Service Enquiry
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="enquiryType" value="volunteer" required>
-                                        Volunteer
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="enquiryType" value="sponsorship" required>
-                                        Sponsorship
-                                    </label>
-                                </div>
-                                <span class="form-error">Please select an enquiry type.</span>
-                            </div>
-
-                            <!-- Full name -->
-                            <div class="form-group">
-                                <label for="fullName">Full Name *</label>
-                                <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="Enter your full name">
-                                <span class="form-error">Please enter your full name.</span>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                                <span class="form-error">Please enter a valid email address.</span>
-                            </div>
-
-                            <!-- Phone -->
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+27 XX XXX XXXX">
-                                <span class="form-error">Please enter a valid phone number.</span>
-                            </div>
-
-                            <!-- Organisation (optional) -->
-                            <div class="form-group">
-                                <label for="organisation">Organisation (if applicable)</label>
-                                <input type="text" id="organisation" name="organisation" placeholder="Company, school, or community name">
-                            </div>
-
-                            <!-- Province dropdown -->
-                            <div class="form-group">
-                                <label for="province">Province *</label>
-                                <select id="province" name="province" required>
-                                    <option value="" disabled selected>Select your province</option>
-                                    <option value="eastern-cape">Eastern Cape</option>
-                                    <option value="free-state">Free State</option>
-                                    <option value="gauteng">Gauteng</option>
-                                    <option value="kwazulu-natal">KwaZulu-Natal</option>
-                                    <option value="limpopo">Limpopo</option>
-                                    <option value="mpumalanga">Mpumalanga</option>
-                                    <option value="north-west">North West</option>
-                                    <option value="northern-cape">Northern Cape</option>
-                                    <option value="western-cape">Western Cape</option>
-                                </select>
-                                <span class="form-error">Please select a province.</span>
-                            </div>
-
-                            <!-- Message textarea -->
-                            <div class="form-group">
-                                <label for="message">Your Message *</label>
-                                <textarea id="message" name="message" required minlength="10" placeholder="Tell us about your enquiry, community needs, or how you would like to get involved..."></textarea>
-                                <span class="form-error">Please enter a message (at least 10 characters).</span>
-                            </div>
-
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Enquiry</button>
-                        </form>
+                    <div class="form-group" id="grp-fullName">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                        <span class="error-message" id="err-fullName">Please enter your full name (at least 2 characters).</span>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== FAQ SECTION ==================== -->
-        <section class="section" aria-label="Frequently asked questions">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Find answers to common questions about getting involved with Water For All.</p>
-                </div>
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
-                        <h4 style="margin-bottom: 0.5rem;">How long does it take to install a water purification system?</h4>
-                        <p style="margin-bottom: 0; color: #555;">Depending on the community size and system type, installation typically takes 2-4 weeks from approval, including site assessment, community consultation, and equipment setup.</p>
+                    <div class="form-group" id="grp-email">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                        <span class="error-message" id="err-email">Please enter a valid email address.</span>
                     </div>
-                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
-                        <h4 style="margin-bottom: 0.5rem;">Do you charge communities for your services?</h4>
-                        <p style="margin-bottom: 0; color: #555;">Our core services are provided free of charge to underserved communities. We are funded through donations, corporate sponsorships, and government grants.</p>
+                    <div class="form-group" id="grp-phone">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+27 XX XXX XXXX">
+                        <span class="error-message" id="err-phone">Please enter a valid phone number.</span>
                     </div>
-                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
-                        <h4 style="margin-bottom: 0.5rem;">What qualifications do I need to volunteer?</h4>
-                        <p style="margin-bottom: 0; color: #555;">No specific qualifications are required. We welcome volunteers from all backgrounds and provide comprehensive training for all roles.</p>
+                    <div class="form-group">
+                        <label for="organisation">Organisation (if applicable)</label>
+                        <input type="text" id="organisation" name="organisation" placeholder="Company, school, or community name">
                     </div>
-                    <div style="padding: 1.5rem; background: #F8FCFD; border-radius: 10px; border-left: 4px solid #0077B6;">
-                        <h4 style="margin-bottom: 0.5rem;">How can my company become a sponsor?</h4>
-                        <p style="margin-bottom: 0; color: #555;">Contact us through this form selecting "Sponsorship" and our partnerships team will reach out to discuss tailored sponsorship opportunities.</p>
+                    <div class="form-group" id="grp-province">
+                        <label for="province">Province *</label>
+                        <select id="province" name="province">
+                            <option value="" disabled selected>Select your province</option>
+                            <option value="eastern-cape">Eastern Cape</option>
+                            <option value="free-state">Free State</option>
+                            <option value="gauteng">Gauteng</option>
+                            <option value="kwazulu-natal">KwaZulu-Natal</option>
+                            <option value="limpopo">Limpopo</option>
+                            <option value="mpumalanga">Mpumalanga</option>
+                            <option value="north-west">North West</option>
+                            <option value="northern-cape">Northern Cape</option>
+                            <option value="western-cape">Western Cape</option>
+                        </select>
+                        <span class="error-message" id="err-province">Please select a province.</span>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== CTA ==================== -->
-        <section class="cta-section" aria-label="Direct contact">
-            <div class="container">
-                <h2>Prefer to Call?</h2>
-                <p>You can also reach us directly during office hours, Monday to Friday, 8am to 5pm.</p>
-                <a href="contact.html" class="btn btn-primary" style="background: #fff; color: #0077B6;">View Contact Details</a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="logo-text">Water <span>For All</span></span>
-                    <p>Providing sustainable access to clean, safe drinking water for communities across South Africa since 2019.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">X</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">&#128247;</a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+                    <div class="form-group" id="grp-message">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your enquiry..."></textarea>
+                        <span class="error-message" id="err-message">Please enter a message (at least 10 characters).</span>
                     </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="enquiry.html">Enquiry</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Water Purification</a></li>
-                        <li><a href="services.html">Conservation Education</a></li>
-                        <li><a href="services.html">Community Outreach</a></li>
-                        <li><a href="services.html">Emergency Response</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>&#128205; 42 Water Street, Cape Town, 8001</li>
-                        <li>&#128222; +27 21 555 0140</li>
-                        <li>&#128231; info@waterforall.org.za</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Water For All. All rights reserved. | A non-profit organisation dedicated to clean water access.</p>
+                    <button type="submit" class="btn btn-primary" style="width:100%">Submit Enquiry</button>
+                </form>
             </div>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <script src="js/main.js"></script>
+<section class="cta"><div class="container"><h2>Prefer to Call?</h2><p>You can also reach us during office hours, Monday to Friday, 8am to 5pm.</p><a href="contact.html" class="btn btn-secondary">View Contact Details</a></div></section>
+
+<footer>
+    <div class="footer-grid">
+        <div><h3>&#128167; Water For All</h3><p>A <strong>fictitious organisation</strong> created for educational purposes.</p></div>
+        <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Services</h4><ul><li><a href="services.html">Water Purification</a></li><li><a href="services.html">Conservation Education</a></li><li><a href="services.html">Community Outreach</a></li><li><a href="services.html">Emergency Response</a></li></ul></div>
+        <div><h4>Contact Us</h4><ul><li>42 Water Street, Cape Town, 8001</li><li>+27 21 555 0140</li><li><a href="mailto:info@waterforall.org.za">info@waterforall.org.za</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Water For All. <strong>This is a fictitious organisation</strong> for the WEDE5020 assignment. All content is fictional.</p></div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#9650;</button>
+
+<script>
+// ===== FORM VALIDATION =====
+(function(){
+    var form=document.getElementById('enquiryForm');
+    var successMsg=document.getElementById('successMsg');
+
+    function showError(fieldId,show){document.getElementById('grp-'+fieldId).classList.toggle('has-error',show)}
+
+    function validateEmail(email){return/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
+    function validatePhone(phone){return/[\d\s\-+()]{7,20}/.test(phone)}
+
+    form.addEventListener('submit',function(e){
+        e.preventDefault();var valid=true;
+        var fullName=document.getElementById('fullName').value.trim();
+        var email=document.getElementById('email').value.trim();
+        var phone=document.getElementById('phone').value.trim();
+        var province=document.getElementById('province').value;
+        var message=document.getElementById('message').value.trim();
+
+        if(fullName.length<2){showError('fullName',true);valid=false}else{showError('fullName',false)}
+        if(!validateEmail(email)){showError('email',true);valid=false}else{showError('email',false)}
+        if(!validatePhone(phone)){showError('phone',true);valid=false}else{showError('phone',false)}
+        if(!province){showError('province',true);valid=false}else{showError('province',false)}
+        if(message.length<10){showError('message',true);valid=false}else{showError('message',false)}
+
+        if(valid){successMsg.classList.add('visible');form.reset();setTimeout(function(){successMsg.classList.remove('visible')},5000)}
+    });
+
+    ['fullName','email','phone','province','message'].forEach(function(id){
+        document.getElementById(id).addEventListener('input',function(){showError(id,false)});
+    });
+})();
+
+// ===== SCROLL TO TOP =====
+var scrollTopBtn=document.getElementById('scrollTop');
+window.addEventListener('scroll',function(){scrollTopBtn.classList.toggle('visible',window.pageYOffset>500)});
+scrollTopBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+
 </body>
 </html>
